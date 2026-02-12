@@ -1,0 +1,38 @@
+<template>
+  <BasicDrawer
+    v-bind="$attrs"
+    :title="getTitle"
+    @register="registerDrawer"
+    width="50%"
+    showFooter
+    :showOkBtn="false"
+  >
+    <Description @register="register" class="mt-4" />
+  </BasicDrawer>
+</template>
+
+<script setup lang="ts">
+  import { ref } from 'vue';
+  import { Description, useDescription } from '@/components/Description';
+  import { detailSchema } from './data';
+  import { DescItemSizeEnum } from '@/enums';
+  import { BasicDrawer, useDrawerInner } from '@/components/Drawer';
+  import { get${ClassNameNoPrefix}Api } from '@/api/${fePackageName}/${businessName}.api';
+
+  /** 标题初始化 */
+  const getTitle = ref('${functionName}详情');
+
+  const [register, { setDescProps }] = useDescription({
+    title: '${functionName}详情',
+    schema: detailSchema,
+    column: DescItemSizeEnum.DEFAULT,
+  });
+
+  const [registerDrawer, { setDrawerProps }] = useDrawerInner(async (data) => {
+    setDrawerProps({ loading: true, confirmLoading: false });
+    const baseInfo = await get${ClassNameNoPrefix}Api(data.record.${pkColumn.javaField});
+    setDescProps({ data: baseInfo });
+    getTitle.value = '${functionName}详情:' + baseInfo?.#if($nameColumn)${nameColumn.javaField}#else${pkColumn.javaField}#end;
+    setDrawerProps({ loading: false });
+  });
+</script>

@@ -1,0 +1,18 @@
+package ${rdPackageName}.service;
+
+#if($table.base)
+#set($Entity="Base")
+#elseif($table.tree)
+#set($Entity="Tree")
+#end
+import ${rdPackageName}.domain.query.${ClassName}Query;
+import ${rdPackageName}.domain.dto.${ClassName}Dto;
+import com.kk.mumuchat.common.web.entity.service.I${Entity}Service;
+
+/**
+ * ${moduleFunctionName}管理 服务层
+ *
+ * @author ${author}
+ */
+public interface I${ClassName}Service extends I${Entity}Service<${ClassName}Query, ${ClassName}Dto> {
+}

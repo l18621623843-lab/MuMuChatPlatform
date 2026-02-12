@@ -1,0 +1,250 @@
+package com.kk.mumuchat.common.web.entity.service.impl;
+
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
+import com.kk.mumuchat.common.core.constant.basic.BaseConstants;
+import com.kk.mumuchat.common.core.constant.basic.OperateConstants;
+import com.kk.mumuchat.common.core.exception.UtilException;
+import com.kk.mumuchat.common.core.utils.core.CollUtil;
+import com.kk.mumuchat.common.core.utils.core.NumberUtil;
+import com.kk.mumuchat.common.core.utils.core.ObjectUtil;
+import com.kk.mumuchat.common.core.utils.core.StrUtil;
+import com.kk.mumuchat.common.core.web.entity.base.BaseEntity;
+import com.kk.mumuchat.common.redis.constant.RedisConstants;
+import com.kk.mumuchat.common.web.correlate.contant.CorrelateConstants;
+import com.kk.mumuchat.common.web.correlate.domain.SqlField;
+import com.kk.mumuchat.common.web.correlate.service.CorrelateService;
+import com.kk.mumuchat.common.web.entity.manager.IBaseManager;
+import com.kk.mumuchat.common.web.entity.service.IBaseService;
+import com.kk.mumuchat.common.web.entity.service.impl.handle.BaseServiceHandle;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * 服务层 基类实现通用数据处理
+ *
+ * @param <Q>   Query
+ * @param <D>   Dto
+ * @param <C>   Correlate
+ * @param <IDG> DtoIManager
+ * @author xueyi
+ */
+public class BaseServiceImpl<Q extends BaseEntity, D extends BaseEntity, C extends Enum<? extends Enum<?>> & CorrelateService, IDG extends IBaseManager<Q, D>> extends BaseServiceHandle<Q, D, C, IDG> implements IBaseService<Q, D> {
+
+    /**
+     * 查询数据对象列表 | 数据权限 | 附加数据
+     *
+     * @param query 数据查询对象
+     * @return 数据对象集合
+     */
+    @Override
+    public List<D> selectListScope(Q query) {
+        return selectList(query);
+    }
+
+    /**
+     * 查询数据对象列表
+     *
+     * @param query 数据查询对象
+     * @return 数据对象集合
+     */
+    @Override
+    public List<D> selectList(Q query) {
+        List<D> dtoList = baseManager.selectList(query);
+        return subCorrelates(dtoList, getBasicCorrelate(CorrelateConstants.ServiceType.SELECT_LIST));
+    }
+
+    /**
+     * 根据动态SQL控制对象查询数据对象集合
+     *
+     * @param field 动态SQL控制对象
+     * @return 数据对象集合
+     */
+    @Override
+    public List<D> selectListByField(SqlField... field) {
+        List<D> dtoList = baseManager.selectListByField(field);
+        return subCorrelates(dtoList);
+    }
+
+    /**
+     * 根据Id集合查询数据对象列表
+     *
+     * @param idList Id集合
+     * @return 数据对象集合
+     */
+    @Override
+    public List<D> selectListByIds(Collection<? extends Serializable> idList) {
+        List<D> dtoList = CollUtil.selectListToBatch(idList, baseManager::selectListByIds);
+        return subCorrelates(dtoList, getBasicCorrelate(CorrelateConstants.ServiceType.SELECT_ID_LIST));
+    }
+
+    /**
+     * 根据Id查询单条数据对象
+     *
+     * @param id Id
+     * @return 数据对象
+     */
+    @Override
+    public D selectById(Serializable id) {
+        D dto = baseManager.selectById(id);
+        return subCorrelates(dto, getBasicCorrelate(CorrelateConstants.ServiceType.SELECT_ID_SINGLE));
+    }
+
+    /**
+     * 新增数据对象
+     *
+     * @param dto 数据对象
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int insert(D dto) {
+        startHandle(OperateConstants.ServiceType.ADD, dto, null);
+        int row = baseManager.insert(dto);
+        endHandle(OperateConstants.ServiceType.ADD, row, null, dto);
+        return row;
+    }
+
+    /**
+     * 新增数据对象（批量）
+     *
+     * @param dtoList 数据对象集合
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int insertBatch(Collection<D> dtoList) {
+        startBatchHandle(OperateConstants.ServiceType.BATCH_ADD, dtoList, null);
+        int rows = baseManager.insertBatch(dtoList);
+        endBatchHandle(OperateConstants.ServiceType.BATCH_ADD, rows, null, dtoList);
+        return rows;
+    }
+
+    /**
+     * 导入数据对象（批量）
+     *
+     * @param dtoList 数据对象集合
+     * @param query   数据查询对象
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int importBatch(List<D> dtoList, Q query) {
+        return NumberUtil.Zero;
+    }
+
+    /**
+     * 修改数据对象
+     *
+     * @param dto 数据对象
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int update(D dto) {
+        D originDto = startHandle(OperateConstants.ServiceType.EDIT, dto, null);
+        int row = baseManager.update(dto);
+        endHandle(OperateConstants.ServiceType.EDIT, row, originDto, dto);
+        return row;
+    }
+
+    /**
+     * 修改数据对象（批量）
+     *
+     * @param dtoList 数据对象集合
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int updateBatch(Collection<D> dtoList) {
+        List<D> originList = startBatchHandle(OperateConstants.ServiceType.BATCH_EDIT, dtoList, null);
+        int rows = baseManager.updateBatch(dtoList);
+        endBatchHandle(OperateConstants.ServiceType.BATCH_EDIT, rows, originList, dtoList);
+        return rows;
+    }
+
+    /**
+     * 修改数据对象状态
+     *
+     * @param dto 数据对象
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int updateStatus(D dto) {
+        D originDto = startHandle(OperateConstants.ServiceType.EDIT_STATUS, dto, null);
+        int row = baseManager.updateStatus(dto);
+        endHandle(OperateConstants.ServiceType.EDIT_STATUS, row, originDto, dto);
+        return row;
+    }
+
+    /**
+     * 根据Id删除数据对象
+     *
+     * @param id Id
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int deleteById(Serializable id) {
+        D originDto = startHandle(OperateConstants.ServiceType.DELETE, null, id);
+        int row = baseManager.deleteById(id);
+        endHandle(OperateConstants.ServiceType.DELETE, row, originDto, null);
+        return row;
+    }
+
+    /**
+     * 根据Id删除数据对象（批量）
+     *
+     * @param idList Id集合
+     * @return 结果
+     */
+    @Override
+    @DSTransactional
+    public int deleteByIds(Collection<? extends Serializable> idList) {
+        List<D> originList = startBatchHandle(OperateConstants.ServiceType.BATCH_DELETE, null, idList);
+        int rows = baseManager.deleteByIds(idList);
+        endBatchHandle(OperateConstants.ServiceType.BATCH_DELETE, rows, originList, null);
+        return rows;
+    }
+
+    /**
+     * 校验名称是否唯一
+     *
+     * @param id   Id
+     * @param name 名称
+     * @return 结果 | true/false 不唯一/唯一
+     */
+    @Override
+    public boolean checkNameUnique(Serializable id, String name) {
+        return ObjectUtil.isNotNull(baseManager.checkNameUnique(ObjectUtil.isNull(id) ? BaseConstants.NONE_ID : id, name));
+    }
+
+    /**
+     * 根据Id查询数据对象状态
+     *
+     * @param id Id
+     * @return 结果 | NORMAL 正常 | DISABLE 停用 | EXCEPTION 异常（值不存在）
+     */
+    @Override
+    public BaseConstants.Status checkStatus(Serializable id) {
+        return Optional.ofNullable(id).map(item -> baseManager.selectById(id)).map(D::getStatus)
+                .filter(BaseConstants.Status::isNormal).map(item -> BaseConstants.Status.NORMAL)
+                .orElse(BaseConstants.Status.DISABLE);
+    }
+
+    /**
+     * 更新缓存数据
+     */
+    @Override
+    public void refreshCache() {
+        Optional.ofNullable(getCacheModel()).filter(item -> StrUtil.isNotBlank(item.getCacheKey())).ifPresentOrElse(model -> {
+            List<D> allList = baseManager.selectList(null);
+            refreshCache(OperateConstants.ServiceType.BATCH_ADD, RedisConstants.OperateType.REFRESH_ALL, allList);
+        }, () -> {
+            throw new UtilException("未正常配置缓存，无法使用!");
+        });
+    }
+}

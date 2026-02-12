@@ -1,0 +1,37 @@
+package ${rdPackageName}.service.impl;
+
+#if($table.base)
+#set($Entity="Base")
+#elseif($table.tree)
+#set($Entity="Tree")
+#end
+import ${rdPackageName}.domain.dto.${ClassName}Dto;
+import ${rdPackageName}.domain.query.${ClassName}Query;
+import ${rdPackageName}.domain.correlate.${ClassName}Correlate;
+import ${rdPackageName}.service.I${ClassName}Service;
+import ${rdPackageName}.manager.I${ClassName}Manager;
+import com.kk.mumuchat.common.web.entity.service.impl.${Entity}ServiceImpl;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * ${moduleFunctionName}管理 服务层处理
+ *
+ * @author ${author}
+ */
+@Service
+public class ${ClassName}ServiceImpl extends ${Entity}ServiceImpl<${ClassName}Query, ${ClassName}Dto, ${ClassName}Correlate, I${ClassName}Manager> implements I${ClassName}Service {
+
+    /**
+     * 查询${functionName}对象列表 | 数据权限
+     *
+     * @param ${classNameNoPrefix} ${functionName}对象
+     * @return ${functionName}对象集合
+     */
+    @Override
+    //@DataScope(userAlias = "createBy", mapperScope = {"${ClassName}Mapper"})
+    public List<${ClassName}Dto> selectListScope(${ClassName}Query ${classNameNoPrefix}) {
+        return super.selectListScope(${classNameNoPrefix});
+    }
+}

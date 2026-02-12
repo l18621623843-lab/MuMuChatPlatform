@@ -1,0 +1,24 @@
+package ${rdPackageName}.manager.impl;
+
+#if($table.base)
+#set($Entity="Base")
+#elseif($table.tree)
+#set($Entity="Tree")
+#end
+import ${rdPackageName}.domain.po.${ClassName}Po;
+import ${rdPackageName}.domain.dto.${ClassName}Dto;
+import ${rdPackageName}.domain.query.${ClassName}Query;
+import ${rdPackageName}.domain.model.${ClassName}Converter;
+import ${rdPackageName}.mapper.${ClassName}Mapper;
+import com.kk.mumuchat.common.web.entity.manager.impl.${Entity}ManagerImpl;
+import ${rdPackageName}.manager.I${ClassName}Manager;
+import org.springframework.stereotype.Component;
+
+/**
+ * ${moduleFunctionName}管理 数据封装层处理
+ *
+ * @author ${author}
+ */
+@Component
+public class ${ClassName}ManagerImpl extends ${Entity}ManagerImpl<${ClassName}Query, ${ClassName}Dto, ${ClassName}Po, ${ClassName}Mapper, ${ClassName}Converter> implements I${ClassName}Manager {
+}

@@ -1,0 +1,2 @@
+com.kk.mumuchat.common.log.service.AsyncLogService
+com.kk.mumuchat.common.log.aspect.LogAspect

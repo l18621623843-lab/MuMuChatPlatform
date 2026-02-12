@@ -1,0 +1,22 @@
+package ${rdPackageName}.domain.model;
+
+#if($table.base)
+#set($Entity="BaseConverter")
+#elseif($table.tree)
+#set($Entity="TreeConverter")
+#end
+import com.kk.mumuchat.common.core.web.entity.model.${Entity};
+import ${rdPackageName}.domain.dto.${ClassName}Dto;
+import ${rdPackageName}.domain.po.${ClassName}Po;
+import ${rdPackageName}.domain.query.${ClassName}Query;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+
+/**
+ * ${moduleFunctionName} 对象映射器
+ *
+ * @author ${author}
+ */
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ${ClassName}Converter extends ${Entity}<${ClassName}Query, ${ClassName}Dto, ${ClassName}Po> {
+}

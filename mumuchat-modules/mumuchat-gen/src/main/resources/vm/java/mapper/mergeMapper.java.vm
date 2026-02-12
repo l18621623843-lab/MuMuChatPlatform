@@ -1,0 +1,14 @@
+package ${rdPackageName}.mapper.merge;
+
+    ${sourceMode};
+import com.kk.mumuchat.common.web.entity.mapper.BasicMapper;
+import ${rdPackageName}.domain.merge .${ClassName};
+
+/**
+ * ${moduleFunctionName} 数据层
+ *
+ * @author ${author}
+ */
+@${sourceMode}
+public interface ${ClassName}Mapper extends BasicMapper<${ClassName}> {
+}

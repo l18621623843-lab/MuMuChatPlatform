@@ -1,0 +1,11 @@
+com.kk.mumuchat.system.api.organize.feign.factory.RemoteDeptFallbackFactory
+com.kk.mumuchat.system.api.organize.feign.factory.RemotePostFallbackFactory
+com.kk.mumuchat.system.api.organize.feign.factory.RemoteUserFallbackFactory
+com.kk.mumuchat.system.api.authority.feign.factory.RemoteAdminLoginFallbackFactory
+com.kk.mumuchat.system.api.authority.feign.factory.RemoteExternalLoginFallbackFactory
+com.kk.mumuchat.system.api.authority.feign.factory.RemoteMenuFallbackFactory
+com.kk.mumuchat.system.api.authority.feign.factory.RemoteClientFallbackFactory
+com.kk.mumuchat.system.api.dict.feign.factory.RemoteConfigFallbackFactory
+com.kk.mumuchat.system.api.dict.feign.factory.RemoteDictFallbackFactory
+com.kk.mumuchat.system.api.dict.feign.factory.RemoteImExFallbackFactory
+com.kk.mumuchat.system.api.log.feign.factory.RemoteLogFallbackFactory

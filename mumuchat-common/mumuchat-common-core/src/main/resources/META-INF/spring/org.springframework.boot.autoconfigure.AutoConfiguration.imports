@@ -1,0 +1,3 @@
+com.kk.mumuchat.common.core.properties.RemoteServiceProperties
+com.kk.mumuchat.common.core.properties.SecretProperties
+com.kk.mumuchat.common.core.utils.core.SpringUtil

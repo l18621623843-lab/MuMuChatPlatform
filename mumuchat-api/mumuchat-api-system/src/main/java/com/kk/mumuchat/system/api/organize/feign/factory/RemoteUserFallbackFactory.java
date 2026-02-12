@@ -1,0 +1,47 @@
+package com.kk.mumuchat.system.api.organize.feign.factory;
+
+import com.kk.mumuchat.common.core.exception.ServiceException;
+import com.kk.mumuchat.common.core.web.result.R;
+import com.kk.mumuchat.system.api.organize.domain.dto.SysUserDto;
+import com.kk.mumuchat.system.api.organize.feign.RemoteUserService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.openfeign.FallbackFactory;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * 系统服务|组织模块|用户服务 降级处理
+ *
+ * @author xueyi
+ */
+@Slf4j
+@Component
+public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserService> {
+
+    @Override
+    public RemoteUserService create(Throwable throwable) {
+        log.error("用户服务调用失败:{},失败原因：", throwable.getMessage(), throwable);
+        return new RemoteUserService() {
+
+            @Override
+            public R<SysUserDto> selectByIdInner(Serializable id) {
+                log.error("获取用户信息失败:{}", throwable.getMessage());
+                throw new ServiceException("获取用户信息失败");
+            }
+
+            @Override
+            public R<List<SysUserDto>> selectListByIdsInner(Collection<? extends Serializable> ids) {
+                log.error("获取用户信息失败:{}", throwable.getMessage());
+                throw new ServiceException("获取用户信息失败");
+            }
+
+            @Override
+            public R<SysUserDto> addInner(SysUserDto user) {
+                return R.fail("新增用户失败:" + throwable.getMessage());
+            }
+        };
+    }
+}

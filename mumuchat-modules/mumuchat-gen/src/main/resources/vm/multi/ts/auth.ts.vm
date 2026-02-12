@@ -1,0 +1,39 @@
+/** ${moduleFunctionName}权限标识 */
+export enum ${ClassNameNoPrefix}Auth {
+#if($api.list)
+  /** ${moduleFunctionName} | 列表 */
+  LIST = 'FE:${authorityName}:list',
+#end
+#if($api.getInfo)
+  /** ${moduleFunctionName} | 详情 */
+  SINGLE = 'FE:${authorityName}:single',
+#end
+#if($api.add)
+  /** ${moduleFunctionName} | 新增 */
+  ADD = 'FE:${authorityName}:add',
+#end
+#if($api.edit)
+  /** ${moduleFunctionName} | 修改 */
+  EDIT = 'FE:${authorityName}:edit',
+#end
+#if($api.editStatus)
+  /** ${moduleFunctionName} | 状态修改 */
+  ES = 'FE:${authorityName}:es',
+#end
+#if($api.batchRemove)
+  /** ${moduleFunctionName} | 删除 */
+  DEL = 'FE:${authorityName}:del',
+#end
+#if($api.import)
+  /** ${moduleFunctionName} | 导入 */
+  IMPORT = 'FE:${authorityName}:import',
+#end
+#if($api.export)
+  /** ${moduleFunctionName} | 导出 */
+  EXPORT = 'FE:${authorityName}:export',
+#end
+#if($api.cache)
+  /** ${moduleFunctionName} | 缓存刷新 */
+  CACHE = 'FE:${authorityName}:cache',
+#end
+}

@@ -1,0 +1,67 @@
+# Tomcat
+server:
+  port: ${SERVER_PORT:12000}
+
+# nacos info
+nacos:
+  host: @nacos.host@
+  port: @nacos.port@
+  namespace: @nacos.namespace@
+  username: @nacos.username@
+  password: @nacos.password@
+
+# 应用名称配置
+application:
+  title: 融合业务服务
+  name: xueyi-mix-service
+
+# Spring
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    # 应用名称
+    name: ${application.name}
+  profiles:
+    # 环境配置
+    active: @profiles.active@
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 100MB
+  cloud:
+    nacos:
+      server-addr: ${NACOS_HOST:${nacos.host}}:${NACOS_PORT:${nacos.port}}
+      username: ${NACOS_USERNAME:${nacos.username}}
+      password: ${NACOS_PASSWORD:${nacos.password}}
+      discovery:
+        # 服务注册地址
+        namespace: ${NACOS_NAMESPACE:${nacos.namespace}}
+      config:
+        # 配置中心地址
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        # 配置文件格式
+        file-extension: yml
+  config:
+    import:
+      - optional:nacos:application-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-secret-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-datasource-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-mq-rabbit-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-mq-mqtt-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始文件服务配置
+      - optional:nacos:xueyi-file-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始鉴权服务配置
+      - optional:nacos:xueyi-auth-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始代码生成服务配置
+      - optional:nacos:xueyi-gen-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始定时任务服务配置
+      - optional:nacos:xueyi-job-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始监控服务配置
+      - optional:nacos:xueyi-monitor-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始系统服务配置
+      - optional:nacos:xueyi-system-${spring.profiles.active}.yml?refreshEnabled=true
+      # 原始租户服务配置
+      - optional:nacos:xueyi-tenant-${spring.profiles.active}.yml?refreshEnabled=true
+      # 融合覆盖配置
+      - optional:nacos:${spring.application.name}-${spring.profiles.active}.yml?refreshEnabled=true

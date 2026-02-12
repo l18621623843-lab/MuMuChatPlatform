@@ -1,0 +1,21 @@
+package ${rdPackageName}.mapper;
+
+#if($table.base)
+#set($Entity="Base")
+#elseif($table.tree)
+#set($Entity="Tree")
+#end
+import ${rdPackageName}.domain.query.${ClassName}Query;
+import ${rdPackageName}.domain.dto.${ClassName}Dto;
+import ${rdPackageName}.domain.po.${ClassName}Po;
+import com.kk.mumuchat.common.web.entity.mapper.${Entity}Mapper;
+import com.kk.mumuchat.common.datasource.annotation.${sourceMode};
+
+/**
+ * ${moduleFunctionName}管理 数据层
+ *
+ * @author ${author}
+ */
+@${sourceMode}
+public interface ${ClassName}Mapper extends ${Entity}Mapper<${ClassName}Query, ${ClassName}Dto, ${ClassName}Po> {
+}

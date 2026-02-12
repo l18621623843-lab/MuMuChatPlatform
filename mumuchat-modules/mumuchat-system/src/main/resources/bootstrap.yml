@@ -1,0 +1,52 @@
+# Tomcat
+server:
+  port: ${SERVER_PORT:9600}
+
+# nacos info
+nacos:
+  host: @nacos.host@
+  port: @nacos.port@
+  namespace: @nacos.namespace@
+  username: @nacos.username@
+  password: @nacos.password@
+
+# 应用名称配置
+application:
+  title: 系统服务
+  name: xueyi-system
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: ${application.name}
+  profiles:
+    # 环境配置
+    active: @profiles.active@
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 100MB
+  cloud:
+    nacos:
+      server-addr: ${NACOS_HOST:${nacos.host}}:${NACOS_PORT:${nacos.port}}
+      username: ${NACOS_USERNAME:${nacos.username}}
+      password: ${NACOS_PASSWORD:${nacos.password}}
+      discovery:
+        # 服务注册地址
+        namespace: ${NACOS_NAMESPACE:${nacos.namespace}}
+      config:
+        # 配置中心地址
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        # 配置文件格式
+        file-extension: yml
+  config:
+    import:
+      - optional:nacos:application-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-secret-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:application-datasource-${spring.profiles.active}.yml?refreshEnabled=true
+      # rabbitMQ连接配置（释放并引入xueyi-common-mq-rabbit即启用）
+#      - optional:nacos:application-mq-rabbit-${spring.profiles.active}.yml?refreshEnabled=true
+      # mqtt连接配置（释放并引入xueyi-common-mq-mqtt即启用）
+#      - optional:nacos:application-mq-mqtt-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:${spring.application.name}-${spring.profiles.active}.yml?refreshEnabled=true

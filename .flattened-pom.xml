@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kk.mumuchat</groupId>
+    <artifactId>mumuchat</artifactId>
+    <version>3.6.1</version>
+
+    <name>MuMuChatPlatform</name>
+    <url>https://xueyitt.cn</url>
+    <description>MuMuChat管理系统</description>
+
+    <properties>
+        <revision>${xueyi.version}</revision>
+        <xueyi.version>3.6.1</xueyi.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+        <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
+        <java.version>17</java.version>
+        <!--        <java.version>21</java.version>-->
+        <spring-boot.version>3.5.8</spring-boot.version>
+        <spring-cloud.version>2025.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.3.3</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>3.5.6</spring-boot-admin.version>
+        <mybatis-plus.version>3.5.15</mybatis-plus.version>
+        <mybatis-plus-join.version>1.5.5</mybatis-plus-join.version>
+        <pagehelper.version>6.1.1</pagehelper.version>
+        <knife-springdoc.version>4.5.0</knife-springdoc.version>
+        <knife-swagger.version>2.2.27</knife-swagger.version>
+        <rocket-mq.version>2.3.4</rocket-mq.version>
+        <redisson.version>3.52.0</redisson.version>
+        <tobato.version>1.27.2</tobato.version>
+        <kaptcha.version>2.3.3</kaptcha.version>
+        <dynamic-ds.version>4.3.1</dynamic-ds.version>
+        <commons-io.version>2.21.0</commons-io.version>
+        <velocity.version>2.4.1</velocity.version>
+        <fastjson2.version>2.0.53</fastjson2.version>
+        <minio.version>8.5.1</minio.version>
+        <poi.version>5.2.5</poi.version>
+        <hutool.version>5.8.41</hutool.version>
+        <lombok.version>1.18.42</lombok.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <mqtt-paho.version>1.2.5</mqtt-paho.version>
+        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
+        <sms4j.version>3.2.0</sms4j.version>
+        <opencv.version>4.11.0</opencv.version>
+        <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
+        <liquibase.version>5.0.1</liquibase.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!-- 环境标识，需要与配置文件的名称相对应 -->
+                <profiles.active>dev</profiles.active>
+                <!-- Nacos地址  -->
+                <nacos.host>localhost</nacos.host>
+                <!-- Nacos端口  -->
+                <nacos.port>8848</nacos.port>
+                <!-- Nacos命名空间  -->
+                <nacos.namespace>public</nacos.namespace>
+                <!-- Nacos账号  -->
+                <nacos.username>nacos</nacos.username>
+                <!-- Nacos密码  -->
+                <nacos.password>nacos</nacos.password>
+                <!-- 打包docker地址  -->
+                <docker.host>http://127.0.0.1:2375</docker.host>
+                <!-- 远程仓库地址  -->
+                <docker.registry>yourself registry</docker.registry>
+                <!-- 远程仓库空间  -->
+                <docker.namespace>yourself namespace</docker.namespace>
+                <!-- 远程仓库账号  -->
+                <docker.username>yourself username</docker.username>
+                <!-- 远程仓库密码  -->
+                <docker.password>yourself password</docker.password>
+                <!-- docker镜像的版本号  -->
+                <docker.image.version>3.6.1</docker.image.version>
+            </properties>
+            <activation>
+                <!-- 默认环境 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 消息队列 - RocketMQ -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocket-mq.version}</version>
+            </dependency>
+
+            <!-- Redisson -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- FastDFS 分布式文件系统 -->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${tobato.version}</version>
+            </dependency>
+
+            <!-- Mybatis-Plus 依赖配置 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- MyBatis 联表查询 -->
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId>
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+
+            <!-- Dynamic DataSource -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
+            </dependency>
+
+            <!-- pageHelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>mybatis</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>mybatis-spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.github.jsqlparser</groupId>
+                        <artifactId>jsqlparser</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- mapstruct 转换器 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <!-- Swagger-Knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife-springdoc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
+                <version>${knife-springdoc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-core-jakarta</artifactId>
+                <version>${knife-swagger.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- Minio -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>pro.fessional</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- 代码生成使用模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- JSON 解析器和生成器 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+
+            <!-- 线程传递值 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!-- API模块依赖配置 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-api-bom</artifactId>
+                <version>${xueyi.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 通用模块依赖配置 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-bom</artifactId>
+                <version>${xueyi.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- huTool 工具类库 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--短信sms4j-->
+            <dependency>
+                <groupId>org.dromara.sms4j</groupId>
+                <artifactId>sms4j-spring-boot-starter</artifactId>
+                <version>${sms4j.version}</version>
+            </dependency>
+
+            <!-- Liquibase（用于管理数据库版本，跟踪、管理和应用数据库变化） -->
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>mumuchat-auth</module>
+        <module>mumuchat-gateway</module>
+        <module>mumuchat-visual</module>
+        <module>mumuchat-modules</module>
+        <module>mumuchat-api</module>
+        <module>mumuchat-common</module>
+        <module>mumuchat-mix</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <dependencies>
+
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <finalName>${project.build.finalName}</finalName>
+                        <layers>
+                            <enabled>true</enabled>
+                        </layers>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker-maven-plugin.version}</version>
+                    <configuration>
+                        <!-- Docker Remote Api-->
+                        <dockerHost>${docker.host}</dockerHost>
+                        <!-- Docker 镜像私服-->
+                        <registry>${docker.registry}</registry>
+                        <!-- 认证信息-->
+                        <authConfig>
+                            <push>
+                                <username>${docker.username}</username>
+                                <password>${docker.password}</password>
+                            </push>
+                        </authConfig>
+                        <images>
+                            <image>
+                                <!-- 镜像名称： 127.0.0.1/xueyitt/mumuchat-gateway:3.0.0.0 -->
+                                <name>
+                                    ${docker.registry}/${docker.namespace}/${project.build.finalName}:${docker.image.version}
+                                </name>
+                                <build>
+                                    <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                </build>
+                            </image>
+                        </images>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <!-- 统一vision版本 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                    <updatePomFile>true</updatePomFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <parameters>true</parameters>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${lombok-mapstruct-binding.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <!-- 代码格式化插件 -->
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>apply</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <java>
+                        <removeUnusedImports/>
+                        <eclipse>
+                            <file>.style/p3c-codestyle.xml</file>
+                        </eclipse>
+                    </java>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>

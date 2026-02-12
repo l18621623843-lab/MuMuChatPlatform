@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.kk.mumuchat</groupId>
+        <artifactId>mumuchat-modules</artifactId>
+        <version>3.6.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mumuchat-modules-system</artifactId>
+
+    <description>
+        mumuchat-modules-system系统模块
+    </description>
+
+    <dependencies>
+
+        <!-- Xueyi Common Dependency Data -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-dependency-data</artifactId>
+        </dependency>
+
+        <!-- XueYi Api File -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-api-file</artifactId>
+        </dependency>
+        <!-- Liquibase（用于管理数据库版本，跟踪、管理和应用数据库变化） -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-liquibase</artifactId>
+            <version>${xueyi.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

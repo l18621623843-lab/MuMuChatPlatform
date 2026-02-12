@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.kk.mumuchat</groupId>
+    <artifactId>mumuchat-api-bom</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <description>
+        mumuchat-api-bomAPI模块依赖配置
+    </description>
+
+    <properties>
+        <revision>${xueyi.version}</revision>
+        <xueyi.version>3.6.1</xueyi.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- 系统接口 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-api-system</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 租管接口 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-api-tenant</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 文件接口 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-api-file</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 定时任务接口 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-api-job</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

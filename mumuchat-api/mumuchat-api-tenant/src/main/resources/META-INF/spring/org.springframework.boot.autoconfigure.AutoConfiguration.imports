@@ -1,0 +1,3 @@
+com.kk.mumuchat.tenant.api.source.feign.factory.RemoteSourceFallbackFactory
+com.kk.mumuchat.tenant.api.source.feign.factory.RemoteStrategyFallbackFactory
+com.kk.mumuchat.tenant.api.tenant.feign.factory.RemoteTenantFallbackFactory

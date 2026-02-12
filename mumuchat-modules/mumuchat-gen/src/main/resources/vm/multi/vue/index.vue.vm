@@ -1,0 +1,267 @@
+<template>
+  <div>
+    <BasicTable @register="registerTable">
+#if($api.add || $api.batchRemove || $api.export || $api.cache || $table.tree)
+      <template #toolbar>
+#if($api.add)
+        <a-button
+          :preIcon="IconEnum.ADD"
+          v-auth="${ClassNameNoPrefix}Auth.ADD"
+          @click="handleCreate"
+          type="primary"
+        >
+          新增
+        </a-button>
+#end
+#if($api.batchRemove)
+        <a-button
+          :preIcon="IconEnum.DELETE"
+          v-auth="${ClassNameNoPrefix}Auth.DEL"
+          @click="handleDelete"
+          type="primary"
+          color="error"
+        >
+          删除
+        </a-button>
+#end
+#if($api.export)
+        <a-button
+          :preIcon="IconEnum.EXPORT"
+          v-auth="${ClassNameNoPrefix}Auth.EXPORT"
+          @click="handleExport"
+          type="primary"
+          color="warning"
+        >
+          导出
+        </a-button>
+#end
+#if($api.cache)
+        <a-button
+          :preIcon="IconEnum.RESET"
+          v-auth="${ClassNameNoPrefix}Auth.CACHE"
+          @click="handleRefresh"
+          type="primary"
+          color="error"
+        >
+          刷新缓存
+        </a-button>
+#end
+#if($table.tree)
+        <a-button type="primary" @click="expandAll">展开全部</a-button>
+        <a-button type="primary" @click="collapseAll">折叠全部</a-button>
+#end
+      </template>
+#end
+#if($api.getInfo || $api.edit || $api.batchRemove)
+      <template #action="{ record }">
+        <TableAction
+          :actions="[
+#if($api.getInfo)
+            {
+              icon: IconEnum.VIEW,
+              tooltip: '查看',
+              auth: ${ClassNameNoPrefix}Auth.SINGLE,
+              onClick: handleView.bind(null, record),
+            },
+#end
+#if($api.edit)
+            {
+              icon: IconEnum.EDIT,
+              tooltip: '编辑',
+              auth: ${ClassNameNoPrefix}Auth.EDIT,
+              onClick: handleEdit.bind(null, record),
+            },
+#end
+#if($api.batchRemove)
+            {
+              icon: IconEnum.DELETE,
+              tooltip: '删除',
+              auth: ${ClassNameNoPrefix}Auth.DEL,
+              color: 'error',
+              onClick: handleDelete.bind(null, record),
+            },
+#end
+          ]"
+        />
+      </template>
+#end
+    </BasicTable>
+#if($api.add || $api.edit)
+    <RefreshDrawer @register="refreshRegisterDrawer" @success="handleSuccess" />
+#end
+#if($api.getInfo)
+    <DetailDrawer @register="detailRegisterDrawer" />
+#end
+  </div>
+</template>
+
+#if($pkColumn.javaType == 'Long' || $pkColumn.javaType == 'String')
+#set($IdType = 'string')
+#elseif($pkColumn.javaType == 'Integer' || $pkColumn.javaType == 'Double' || $pkColumn.javaType == 'BigDecimal')
+#set($IdType = 'number')
+#else
+#set($IdType = 'any')
+#end
+<script setup lang="ts">
+#if($api.batchRemove)
+  import { reactive } from 'vue';
+#end
+  import { list${ClassNameNoPrefix}Api#if($api.batchRemove), del${ClassNameNoPrefix}Api#end#if($api.export), export${ClassNameNoPrefix}Api#end#if($api.cache), refresh${ClassNameNoPrefix}Api#end } from '@/api/${fePackageName}/${businessName}.api';
+#if($api.add || $api.edit || $api.getInfo)
+  import { useDrawer } from '@/components/Drawer';
+#end
+#if($api.add || $api.edit)
+  import RefreshDrawer from './Drawer.vue';
+#end
+#if($api.getInfo)
+  import DetailDrawer from './Detail.vue';
+#end
+#if($api.batchRemove || $api.cache)
+  import { useMessage } from '@/hooks/web/useMessage';
+#end
+#if($api.getInfo || $api.edit || $api.batchRemove || $api.export || $api.cache)
+  import { IconEnum } from '@/enums';
+#end
+  import { BasicTable, TableAction, useTable } from '@/components/Table';
+#if($api.getInfo || $api.add || $api.edit || $api.batchRemove || $api.export || $api.cache)
+  import { ${ClassNameNoPrefix}Auth } from '@/auth/${fePackageName}#if(!$isDependMode)/${businessName}.auth#end';
+#end
+  import { columns, searchFormSchema } from './data';
+#if($api.export)
+  import { ${ClassName}PM } from '@/model/${fePackageName}#if(!$isDependMode)/${businessName}.model#end';
+#end
+
+#if($api.batchRemove || $api.cache)
+  const { createMessage#if($api.batchRemove), createConfirm#end } = useMessage();
+#end
+#if($api.batchRemove)
+  const state = reactive<{
+    ${pkColumn.javaField}s: ${IdType}[];
+    ${pkColumn.javaField}Names: string;
+  }>({
+    ${pkColumn.javaField}s: [],
+    ${pkColumn.javaField}Names: '',
+  });
+#end
+
+#if($api.add || $api.edit)
+  const [refreshRegisterDrawer, { openDrawer: refreshOpenDrawer }] = useDrawer();
+#end
+#if($api.getInfo)
+  const [detailRegisterDrawer, { openDrawer: detailOpenDrawer }] = useDrawer();
+#end
+  const [registerTable, { reload#if($table.tree), expandAll, collapseAll#end#if($api.export), getForm#end }] = useTable({
+    title: '${functionName}列表',
+    api: list${ClassNameNoPrefix}Api,
+    striped: false,
+    useSearchForm: true,
+    rowKey: '${pkColumn.javaField}',
+    bordered: true,
+    showIndexColumn: true,
+    columns,
+    formConfig: {
+      labelWidth: 120,
+      schemas: searchFormSchema,
+    },
+#if($table.tree)
+    isTreeTable: true,
+    pagination: false,
+    canResize: false,
+#end
+    showTableSetting: true,
+    tableSetting: {
+      fullScreen: true,
+    },
+#if($api.getInfo || $api.edit || $api.batchRemove)
+    actionColumn: {
+      width: 220,
+      title: '操作',
+      dataIndex: 'action',
+      slots: { customRender: 'action' },
+    },
+#end
+#if($api.batchRemove)
+    rowSelection: {
+      onChange: (selectedRowKeys, selectRows) => {
+        state.${pkColumn.javaField}s = selectedRowKeys as ${IdType}[];
+        state.${pkColumn.javaField}Names = selectRows
+          .map((item) => {
+            return item.#if($nameColumn)${nameColumn.javaField}#else${pkColumn.javaField}#end;
+          })
+          .join(',');
+      },
+    },
+#end
+  });
+#if($api.getInfo)
+
+  /** 查看按钮 */
+  function handleView(record: Recordable) {
+    detailOpenDrawer(true, {
+      record,
+    });
+  }
+#end
+#if($api.add)
+
+  /** 新增按钮 */
+  function handleCreate() {
+    refreshOpenDrawer(true, {
+      isUpdate: false,
+    });
+  }
+#end
+#if($api.edit)
+
+  /** 修改按钮 */
+  function handleEdit(record: Recordable) {
+    refreshOpenDrawer(true, {
+      record,
+      isUpdate: true,
+    });
+  }
+#end
+#if($api.batchRemove)
+
+  /** 删除按钮 */
+  function handleDelete(record: Recordable) {
+    const delIds = record?.${pkColumn.javaField} || state.${pkColumn.javaField}s;
+    const delNames = record?.#if($nameColumn)${nameColumn.javaField}#else${pkColumn.javaField}#end || state.${pkColumn.javaField}Names;
+    if (!record?.${pkColumn.javaField} && state.${pkColumn.javaField}s.length === 0) {
+      createMessage.warning('请选择要操作的数据！');
+    } else {
+      createConfirm({
+        iconType: 'warning',
+        title: '提示',
+        content: '是否确定要删除' + delNames + '?',
+        onOk: () =>
+          del${ClassNameNoPrefix}Api(delIds).then(() => {
+            createMessage.success('删除' + delNames + '成功！');
+            reload();
+          }),
+      });
+    }
+  }
+#end
+#if($api.export)
+
+  /** 导出按钮 */
+  function handleExport() {
+    const value = getForm().getFieldsValue() as ${ClassName}PM;
+    export${ClassNameNoPrefix}Api(value);
+  }
+#end
+#if($api.cache)
+
+  /** 刷新缓存按钮 */
+  function handleRefresh() {
+    refresh${ClassNameNoPrefix}Api().then(() => createMessage.success('${functionName}缓存刷新成功！'));
+  }
+#end
+#if($api.add || $api.edit)
+
+  function handleSuccess() {
+    reload();
+  }
+#end
+</script>

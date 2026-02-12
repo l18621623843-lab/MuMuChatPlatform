@@ -1,0 +1,452 @@
+stages:
+  - build-ui
+  - push-ui
+  - build-java
+  - push-java-batch-0
+  - push-java-batch-1
+  - push-java-batch-2
+  - push-java-batch-3
+  - push-java-batch-4
+
+variables:
+  # DockerHost地址，默认：tcp://docker:2375，变量自定义：$CI_DOCKER_HOST | 动态变量
+  DOCKER_HOST: "tcp://docker:2375"
+  # 镜像版本，默认：latest，变量自定义：$CI_IMAGE_TAG | 动态变量
+  IMAGE_TAG: "latest"
+  # docker:dind镜像，默认：docker:dind，变量自定义：$CI_DOCKER_DIND_IMAGE | 动态变量
+  DOCKER_DIND_IMAGE: "docker:dind"
+  # Maven镜像，默认：maven:3.9.9-amazoncorretto-17-alpine，变量自定义：$CI_MAVEN_IMAGE | 动态变量
+  MAVEN_IMAGE: "maven:3.9.9-amazoncorretto-17-alpine"
+  # JDK镜像，默认：eclipse-temurin:17-jre-jammy，变量自定义：$CI_JDK_17_IMAGE | 动态变量
+  JDK_IMAGE: "eclipse-temurin:17-jre-jammy"
+  # Node.js镜像，默认：node:22.13.1-alpine，变量自定义：$CI_NODE_IMAGE | 动态变量
+  NODE_IMAGE: "node:22.13.1-alpine"
+  # nginx镜像，默认：nginx:1.27.3-alpine，变量自定义：$CI_NGINX_IMAGE | 动态变量
+  NGINX_IMAGE: "nginx:1.27.3-alpine"
+  # skywalking-java-agent镜像，变量自定义：$CI_SKYWALKING_AGENT_IMAGE | 动态变量
+  SKYWALKING_AGENT_IMAGE: "apache/skywalking-java-agent:9.5.0-java17"
+  # 项目唯一缓存路径（包含项目路径和分支）
+  CACHE_KEY_SUFFIX: "${CI_PROJECT_PATH_SLUG}/${CI_COMMIT_REF_NAME}"
+  # 统一存储路径
+  MAVEN_REPO_DIR: "${CI_PROJECT_DIR}/.maven-repo"
+  # 共享存储路径
+  SHARED_STORE: "/shared-cache/${CACHE_KEY_SUFFIX}"
+  # PNPM统一存储路径
+  PNPM_STORE_DIR: "${CI_PROJECT_DIR}/.pnpm-store"
+  # 重定向本地仓库路径
+  MAVEN_OPTS: "-Dmaven.repo.local=${MAVEN_REPO_DIR}/.m2/repository"
+  # 仓库地址
+  IMAGE_URL: "${CI_IMAGE_REGISTRY}/${CI_IMAGE_NAMESPACE}"
+  # 触发分支
+  TRIGGER_BRANCH: "master"
+
+# 统一缓存策略
+cache:
+  key: "${CACHE_KEY_SUFFIX}"
+  paths:
+    - ${MAVEN_REPO_DIR}  # Maven本地仓库
+    - ${PNPM_STORE_DIR}  # pnpm缓存
+  policy: pull-push      # 缓存双向同步
+
+before_script:
+  # 创建共享存储目录并建立符号链接
+  - mkdir -p ${SHARED_STORE}/.maven-repo
+  - ln -sf ${SHARED_STORE}/.maven-repo ${MAVEN_REPO_DIR}
+  - mkdir -p ${SHARED_STORE}/.pnpm-store
+  - ln -sf ${SHARED_STORE}/.pnpm-store ${PNPM_STORE_DIR}
+  # 初始化自定义变量
+  - if [ -n "$CI_IMAGE_TAG" ]; then
+    export IMAGE_TAG="${CI_IMAGE_TAG}";
+    fi
+  - if [ -n "$CI_JDK_17_IMAGE" ]; then
+    export JDK_IMAGE="${CI_JDK_17_IMAGE}";
+    fi
+  - if [ -n "$CI_NGINX_IMAGE" ]; then
+    export NGINX_IMAGE="${CI_NGINX_IMAGE}";
+    fi
+  - if [ -n "$CI_SKYWALKING_AGENT_IMAGE" ]; then
+    export SKYWALKING_AGENT_IMAGE="${CI_SKYWALKING_AGENT_IMAGE}";
+    fi
+
+# 前端打包
+build-ui:
+  stage: build-ui
+  image: $NODE_IMAGE  # Node.js 镜像
+  variables:
+    # 临时设置为开发环境
+    NODE_ENV: "development"
+    DOCKER_FILE_URL: "multi-ui"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 Node.js 镜像
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_NODE_IMAGE != null
+      variables:
+        NODE_IMAGE: ${CI_NODE_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - cd ./$DOCKER_FILE_URL
+    - pnpm -v || npm install -g pnpm@latest  # 确保 pnpm 存在
+    - pnpm config set store-dir ${PNPM_STORE_DIR}
+    - pnpm fetch --store ${SHARED_STORE}/.pnpm-store  # 指定存储路径
+    - pnpm install --frozen-lockfile --offline  # 强制安装所有依赖
+    - pnpm run build  # 执行 package.json 中的 build 脚本
+  artifacts:
+    paths:
+      - multi-ui/dist/  # 打包后的文件在 dist 目录
+      - multi-ui/nginx/conf/nginx.conf  # nginx文件
+
+# 前端镜像推送
+push-ui:
+  stage: push-ui
+  services:
+    - name: docker:dind
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "multi-ui"
+    DOCKER_FILE_URL: "multi-ui"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    # BASE_IMAGE是替换项目中DockerFile默认的nginx镜像
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${NGINX_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-ui
+
+# 后台打包
+build-java:
+  stage: build-java
+  image: $MAVEN_IMAGE  # maven 镜像
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 maven 镜像
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_MAVEN_IMAGE != null
+      variables:
+        MAVEN_IMAGE: ${CI_MAVEN_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - mvn clean install -DskipTests $MAVEN_OPTS
+    # 清理非必要文件（减少 80% 产物体积）
+    - find . -type d -name "surefire-reports" -exec rm -rf {} +
+    - find . -type d -name "maven-archiver" -exec rm -rf {} +
+  artifacts:
+    paths:
+      - xueyi-auth/target/*.jar
+      - xueyi-gateway/target/*.jar
+      - xueyi-mix/**/target/*.jar
+      - xueyi-modules/**/target/*.jar
+      - xueyi-visual/xueyi-monitor/target/*.jar
+    expire_in: 2 hour
+
+# 融合网关服务
+push-mix-gateway:
+  stage: push-java-batch-0
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-mix-gateway"
+    DOCKER_FILE_URL: "xueyi-mix/xueyi-mix-gateway"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 融合业务服务
+push-mix-service:
+  stage: push-java-batch-0
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-mix-service"
+    DOCKER_FILE_URL: "xueyi-mix/xueyi-mix-service"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 系统服务
+push-modules-system:
+  stage: push-java-batch-1
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-modules-system"
+    DOCKER_FILE_URL: "xueyi-modules/xueyi-system"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 租户服务
+push-modules-tenant:
+  stage: push-java-batch-1
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-modules-tenant"
+    DOCKER_FILE_URL: "xueyi-modules/xueyi-tenant"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 鉴权服务
+push-auth:
+  stage: push-java-batch-2
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-auth"
+    DOCKER_FILE_URL: "xueyi-auth"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 网关服务
+push-gateway:
+  stage: push-java-batch-2
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-gateway"
+    DOCKER_FILE_URL: "xueyi-gateway"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 文件服务
+push-modules-file:
+  stage: push-java-batch-3
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-modules-file"
+    DOCKER_FILE_URL: "xueyi-modules/xueyi-file"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 代码生成服务
+push-modules-gen:
+  stage: push-java-batch-3
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-modules-gen"
+    DOCKER_FILE_URL: "xueyi-modules/xueyi-gen"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 定时任务服务
+push-modules-job:
+  stage: push-java-batch-4
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-modules-job"
+    DOCKER_FILE_URL: "xueyi-modules/xueyi-job"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 监控服务
+push-visual-monitor:
+  stage: push-java-batch-4
+  services:
+    - name: $DOCKER_DIND_IMAGE
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    IMAGE_NAME: "xueyi-visual-monitor"
+    DOCKER_FILE_URL: "xueyi-visual/xueyi-monitor"
+  rules:
+    # 规则1：# 仅允许指定分支触发 && 使用自定义 dockerHost地址 && 使用自定义 docker:dind地址
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME && $CI_DOCKER_HOST != null && $CI_DOCKER_DIND_IMAGE != null
+      variables:
+        DOCKER_HOST: ${CI_DOCKER_HOST}
+        DOCKER_DIND_IMAGE: ${CI_DOCKER_DIND_IMAGE}
+      # 规则2：# 仅允许指定分支触发
+    - if: $TRIGGER_BRANCH == $CI_COMMIT_REF_NAME
+  script:
+    - export IMAGE_NAME="${IMAGE_URL}/${IMAGE_NAME}:${IMAGE_TAG}"
+    - echo "$CI_DOCKER_PASSWORD" | docker login -u "$CI_DOCKER_USERNAME" --password-stdin "$CI_IMAGE_REGISTRY"
+    - docker build
+      -t $IMAGE_NAME
+      --build-arg BASE_IMAGE=${JDK_IMAGE}
+      --build-arg SKYWALKING_AGENT_IMAGE=${SKYWALKING_AGENT_IMAGE}
+      -f $DOCKER_FILE_URL/Dockerfile $DOCKER_FILE_URL
+    - docker push $IMAGE_NAME
+  dependencies:
+    - build-java
+
+# 其他Docker构建阶段（保持原有逻辑）...

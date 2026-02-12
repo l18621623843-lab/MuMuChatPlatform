@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.kk.mumuchat</groupId>
+        <artifactId>mumuchat-common</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mumuchat-common-cache</artifactId>
+
+    <description>
+        mumuchat-common-cache缓存管理
+    </description>
+
+    <dependencies>
+
+        <!-- XueYi Common Redis -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-redis</artifactId>
+        </dependency>
+
+        <!-- XueYi Api System -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-api-system</artifactId>
+        </dependency>
+
+        <!-- XueYi Api Tenant -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-api-tenant</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

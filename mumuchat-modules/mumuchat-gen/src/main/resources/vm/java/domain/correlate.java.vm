@@ -1,0 +1,24 @@
+package ${rdPackageName}.domain.correlate;
+
+import com.kk.mumuchat.common.web.correlate.domain.BaseCorrelate;
+import com.kk.mumuchat.common.web.correlate.service.CorrelateService;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import java.util.List;
+
+/**
+ * ${moduleFunctionName} 关联映射
+ *
+ * @author ${author}
+ */
+@Getter
+@AllArgsConstructor
+public enum ${ClassName}Correlate implements CorrelateService {
+
+    ;
+
+    private final String info;
+    private final List<? extends BaseCorrelate<?>> correlates;
+
+}

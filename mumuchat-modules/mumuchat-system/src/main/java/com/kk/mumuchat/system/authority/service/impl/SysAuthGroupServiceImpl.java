@@ -1,0 +1,58 @@
+package com.kk.mumuchat.system.authority.service.impl;
+
+import com.kk.mumuchat.common.web.correlate.contant.CorrelateConstants;
+import com.kk.mumuchat.common.web.entity.service.impl.BaseServiceImpl;
+import com.kk.mumuchat.system.authority.domain.correlate.SysAuthGroupCorrelate;
+import com.kk.mumuchat.system.authority.domain.dto.SysAuthGroupDto;
+import com.kk.mumuchat.system.authority.domain.query.SysAuthGroupQuery;
+import com.kk.mumuchat.system.authority.manager.ISysAuthGroupManager;
+import com.kk.mumuchat.system.authority.service.ISysAuthGroupService;
+import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 系统服务|权限模块|企业权限组管理 服务层处理
+ *
+ * @author xueyi
+ */
+@Service
+public class SysAuthGroupServiceImpl extends BaseServiceImpl<SysAuthGroupQuery, SysAuthGroupDto, SysAuthGroupCorrelate, ISysAuthGroupManager> implements ISysAuthGroupService {
+
+    /**
+     * 默认方法关联配置定义
+     */
+    protected Map<CorrelateConstants.ServiceType, SysAuthGroupCorrelate> defaultCorrelate() {
+        return new HashMap<>() {{
+            put(CorrelateConstants.ServiceType.ADD, SysAuthGroupCorrelate.BASE_ADD);
+            put(CorrelateConstants.ServiceType.EDIT, SysAuthGroupCorrelate.BASE_EDIT);
+            put(CorrelateConstants.ServiceType.DELETE, SysAuthGroupCorrelate.BASE_DEL);
+        }};
+    }
+
+    /**
+     * 查询系统服务|权限模块|企业权限组对象列表|数据权限
+     *
+     * @param authGroup 系统服务|权限模块|企业权限组对象
+     * @return 系统服务|权限模块|企业权限组对象集合
+     */
+    @Override
+    //@DataScope(userAlias = "createBy", mapperScope = {"SysAuthGroupMapper"})
+    public List<SysAuthGroupDto> selectListScope(SysAuthGroupQuery authGroup) {
+        return super.selectListScope(authGroup);
+    }
+
+    /**
+     * 根据Id查询单条数据对象
+     *
+     * @param id Id
+     * @return 数据对象
+     */
+    @Override
+    public SysAuthGroupDto selectInfoById(Serializable id) {
+        return subCorrelates(selectById(id), SysAuthGroupCorrelate.INFO_LIST);
+    }
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.kk.mumuchat</groupId>
+        <artifactId>mumuchat-modules</artifactId>
+        <version>3.6.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mumuchat-modules-file</artifactId>
+
+    <description>
+        mumuchat-modules-file文件服务
+    </description>
+
+    <dependencies>
+
+        <!-- Xueyi Common Dependency Nacos -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-dependency-nacos</artifactId>
+        </dependency>
+
+        <!-- FastDFS -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+        </dependency>
+
+        <!-- Minio -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-compress</artifactId>
+                    <groupId>org.apache.commons</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 图片处理OpenCV -->
+        <dependency>
+            <groupId>org.opencv</groupId>
+            <artifactId>opencv</artifactId>
+            <version>${opencv.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/opencv/lib/opencv-4110.jar</systemPath>
+        </dependency>
+
+        <!-- XueYi Api File -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-api-file</artifactId>
+        </dependency>
+
+        <!-- XueYi Api Security -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-security</artifactId>
+        </dependency>
+
+        <!-- XueYi Common Swagger -->
+        <dependency>
+            <groupId>com.kk.mumuchat</groupId>
+            <artifactId>mumuchat-common-swagger</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <!-- 优先处理 opencv 资源 -->
+            <!-- 1. 处理 native 库文件 (dll/so/dylib) -->
+            <resource>
+                <directory>src/main/resources/opencv/native</directory>
+                <targetPath>BOOT-INF/classes/opencv/native</targetPath>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.dll</include>
+                    <include>**/*.so</include>
+                    <include>**/*.dylib</include>
+                </includes>
+            </resource>
+
+            <!-- 2. 处理 opencv jar 文件 -->
+            <resource>
+                <directory>src/main/resources/opencv/lib</directory>
+                <targetPath>BOOT-INF/lib</targetPath>
+                <includes>
+                    <include>opencv-4110.jar</include>
+                </includes>
+            </resource>
+
+            <!-- 3. 处理其他资源 (排除已单独处理的 opencv 目录) -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>opencv/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <skip>false</skip>
+                    <!-- 确保资源文件被包含 -->
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,3 @@
+com.kk.mumuchat.common.mq.rabbit.config.properties.RabbitExchangeProperties
+com.kk.mumuchat.common.mq.rabbit.config.RabbitMQConfiguration
+com.kk.mumuchat.common.mq.rabbit.service.impl.RabbitServiceImpl

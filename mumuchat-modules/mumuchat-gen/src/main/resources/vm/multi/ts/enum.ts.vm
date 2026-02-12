@@ -1,0 +1,2 @@
+/** ${functionName}主页路由名称 */
+export const ${ClassNameNoPrefix}IndexGo = '${menuName0}';

@@ -1,0 +1,54 @@
+package com.kk.mumuchat.tenant.tenant.manager.impl;
+
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.kk.mumuchat.common.core.constant.basic.SqlConstants;
+import com.kk.mumuchat.common.core.utils.core.ObjectUtil;
+import com.kk.mumuchat.common.web.entity.manager.impl.BaseManagerImpl;
+import com.kk.mumuchat.tenant.api.tenant.domain.dto.TeTenantDto;
+import com.kk.mumuchat.tenant.api.tenant.domain.po.TeTenantPo;
+import com.kk.mumuchat.tenant.api.tenant.domain.query.TeTenantQuery;
+import com.kk.mumuchat.tenant.tenant.domain.model.TeTenantConverter;
+import com.kk.mumuchat.tenant.tenant.manager.ITeTenantManager;
+import com.kk.mumuchat.tenant.tenant.mapper.TeTenantMapper;
+import org.springframework.stereotype.Component;
+
+/**
+ * 租户服务 | 租户模块 | 租户管理 数据封装层处理
+ *
+ * @author xueyi
+ */
+@Component
+public class TeTenantManagerImpl extends BaseManagerImpl<TeTenantQuery, TeTenantDto, TeTenantPo, TeTenantMapper, TeTenantConverter> implements ITeTenantManager {
+
+    /**
+     * 校验数据源策略是否被使用
+     *
+     * @param strategyId 数据源策略id
+     * @return 结果
+     */
+    @Override
+    public TeTenantDto checkStrategyExist(Long strategyId) {
+        TeTenantPo tenant = baseMapper.selectOne(
+                Wrappers.<TeTenantPo>query().lambda()
+                        .eq(TeTenantPo::getStrategyId, strategyId)
+                        .last(SqlConstants.LIMIT_ONE));
+        return baseConverter.mapperDto(tenant);
+    }
+
+    /**
+     * 校验租户关联域名是否已存在
+     *
+     * @param id         租户Id
+     * @param domainName 企业自定义域名
+     * @return 租户信息对象
+     */
+    @Override
+    public TeTenantDto checkDomainName(Long id, String domainName) {
+        TeTenantPo tenant = baseMapper.selectOne(
+                Wrappers.<TeTenantPo>lambdaQuery()
+                        .eq(TeTenantPo::getDomainName, domainName)
+                        .ne(ObjectUtil.isNotNull(id), TeTenantPo::getId, id)
+                        .last(SqlConstants.LIMIT_ONE));
+        return baseConverter.mapperDto(tenant);
+    }
+}

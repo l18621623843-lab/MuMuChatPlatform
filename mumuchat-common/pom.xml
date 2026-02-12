@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.kk.mumuchat</groupId>
+        <artifactId>mumuchat</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>mumuchat-common-bom</module>
+        <module>mumuchat-common-log</module>
+        <module>mumuchat-common-web</module>
+        <module>mumuchat-common-core</module>
+        <module>mumuchat-common-redis</module>
+        <module>mumuchat-common-seata</module>
+        <module>mumuchat-common-cache</module>
+        <module>mumuchat-common-swagger</module>
+        <module>mumuchat-common-security</module>
+        <module>mumuchat-common-datascope</module>
+        <module>mumuchat-common-datasource</module>
+        <module>mumuchat-common-dependency</module>
+        <module>mumuchat-common-sms</module>
+        <module>mumuchat-common-mail</module>
+        <module>mumuchat-common-mq</module>
+        <module>mumuchat-common-liquibase</module>
+    </modules>
+
+    <artifactId>mumuchat-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        mumuchat-common通用模块
+    </description>
+
+</project>

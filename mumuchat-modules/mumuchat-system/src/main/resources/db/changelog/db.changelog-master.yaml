@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/dbs/xy-cloud.sql
+  - include:
+      file: db/changelog/dbs/quartz.sql

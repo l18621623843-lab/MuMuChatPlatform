@@ -1,0 +1,38 @@
+package com.kk.mumuchat.tenant.api.tenant.domain.dto;
+
+import com.kk.mumuchat.common.core.constant.basic.SecurityConstants;
+import com.kk.mumuchat.tenant.api.source.domain.dto.TeStrategyDto;
+import com.kk.mumuchat.tenant.api.tenant.domain.po.TeTenantPo;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.io.Serial;
+
+/**
+ * 租户服务 | 租户模块 | 租户 数据传输对象
+ *
+ * @author xueyi
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class TeTenantDto extends TeTenantPo {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    /** 策略信息 */
+    private TeStrategyDto strategy;
+
+    /** 权限Ids */
+    private Long[] authIds;
+
+    /** 校验是否非租管租户 */
+    public boolean isNotAdmin() {
+        return !SecurityConstants.TenantType.isLessor(this.getIsLessor());
+    }
+
+    /** 校验是否为租管租户 */
+    public boolean isAdmin() {
+        return SecurityConstants.TenantType.isLessor(this.getIsLessor());
+    }
+}

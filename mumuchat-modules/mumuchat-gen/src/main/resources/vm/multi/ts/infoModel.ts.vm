@@ -1,0 +1,67 @@
+#if($table.base)
+#set($Entity="Base")
+#set($genericsIM = "")
+#set($genericsPM = "")
+#elseif($table.tree)
+#set($Entity="Tree")
+#set($genericsIM = "<"+${ClassName}+"IM>")
+#set($genericsPM = "<"+${ClassName}+"PM>")
+#end
+import { BasicFetchResult, BasicPageParams, ${Entity}Entity } from '@/model';
+
+/** ${functionName} 数据传输对象 */
+export interface ${ClassName}IM extends ${Entity}Entity${genericsIM} {
+#foreach ($column in $columns)
+#set($hide = true)
+#foreach($item in $frontHideField)
+#if($column.javaField == $item)
+#set($hide = false)
+#break
+#end
+#end
+#if($hide)
+#if($column.javaType == 'Long' || $column.javaType == 'String')
+#set($columnType = 'string')
+#elseif($column.javaType == 'Integer' || $column.javaType == 'Double' || $column.javaType == 'BigDecimal')
+#set($columnType = 'number')
+#else
+#set($columnType = 'any')
+#end
+  /** ${column.comment} */
+  ${column.javaField}: ${columnType};
+#end
+#end
+}
+
+/** ${functionName} 数据传输对象集合 */
+export type ${ClassName}LM = ${ClassName}IM[];
+
+/** ${functionName} 数据查询对象 */
+export interface ${ClassName}PM extends ${Entity}Entity${genericsPM} {
+#foreach ($column in $columns)
+#set($hide = true)
+#foreach($item in $frontHideField)
+#if($column.javaField == $item)
+#set($hide = false)
+#break
+#end
+#end
+#if($hide)
+#if($column.javaType == 'Long' || $column.javaType == 'String')
+#set($columnType = 'string')
+#elseif($column.javaType == 'Integer' || $column.javaType == 'Double' || $column.javaType == 'BigDecimal')
+#set($columnType = 'number')
+#else
+#set($columnType = 'any')
+#end
+  /** ${column.comment} */
+  ${column.javaField}?: ${columnType};
+#end
+#end
+}
+
+/** ${functionName} 分页数据查询对象 */
+export type ${ClassName}PPM = BasicPageParams & ${ClassName}PM;
+
+/** ${functionName} 分页数据传输对象集合 */
+export type ${ClassName}LRM = BasicFetchResult<${ClassName}IM>;

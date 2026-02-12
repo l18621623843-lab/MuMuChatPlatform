@@ -1,0 +1,31 @@
+package com.kk.mumuchat.tenant.api.source.domain.dto;
+
+import com.kk.mumuchat.common.core.constant.basic.TenantConstants;
+import com.kk.mumuchat.tenant.api.source.domain.po.TeStrategyPo;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.io.Serial;
+
+/**
+ * 租户服务 | 策略模块 | 源策略 数据传输对象
+ *
+ * @author xueyi
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class TeStrategyDto extends TeStrategyPo {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    /** 数据源信息 */
+    private TeSourceDto source;
+
+    public String getSourceSlave(TenantConstants.StrategyType strategyType) {
+        return switch (strategyType) {
+            case DEFAULT -> getSourceSlave();
+            default -> sourceTypeInfo.getString(strategyType.getCode());
+        };
+    }
+}

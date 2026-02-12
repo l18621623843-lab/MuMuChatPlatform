@@ -1,0 +1,4 @@
+com.kk.mumuchat.common.web.config.properties.TenantProperties
+com.kk.mumuchat.common.web.config.XueYiMyBatisPlusConfig
+com.kk.mumuchat.common.web.handler.TenantLineHandler
+com.kk.mumuchat.common.web.aspect.AutoInjectAspect

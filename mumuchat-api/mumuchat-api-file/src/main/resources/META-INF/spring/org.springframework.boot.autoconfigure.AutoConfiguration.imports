@@ -1,0 +1,2 @@
+com.kk.mumuchat.file.api.feign.factory.RemoteFileFallbackFactory
+com.kk.mumuchat.file.api.feign.factory.RemoteFileManageFallbackFactory

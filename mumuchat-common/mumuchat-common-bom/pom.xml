@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.kk.mumuchat</groupId>
+    <artifactId>mumuchat-common-bom</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <description>
+        mumuchat-common-bom通用模块依赖配置
+    </description>
+
+    <properties>
+        <revision>${xueyi.version}</revision>
+        <xueyi.version>3.6.1</xueyi.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- 核心模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-core</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 通信模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-web</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 接口模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-swagger</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 安全模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-security</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 权限范围 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-datascope</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 多数据源 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-datasource</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 通用开发依赖 - Data -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-dependency-data</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 通用开发依赖 - Nacos -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-dependency-nacos</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 日志记录 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-log</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 缓存管理 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-cache</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 缓存服务 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-redis</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 分布式事务 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-seata</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 邮件模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mail</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- 短信模块 -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-sms</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- MQ模块 - MQTT -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mq-mqtt</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- MQ模块 - Redis -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mq-redis</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- MQ模块 - Rabbit -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mq-rabbit</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- MQ模块 - Rocket -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mq-rocket</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+
+            <!-- MQ模块 - Kafka -->
+            <dependency>
+                <groupId>com.kk.mumuchat</groupId>
+                <artifactId>mumuchat-common-mq-kafka</artifactId>
+                <version>${xueyi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
