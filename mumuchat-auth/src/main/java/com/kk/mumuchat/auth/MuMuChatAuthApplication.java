@@ -17,15 +17,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class MuMuChatAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(MuMuChatAuthApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  认证授权中心启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
-                "  _____     __   ____     __        \n" +
-                "  \\   _\\   /  /  \\   \\   /  /   \n" +
-                "  .-./ ). /  '    \\  _. /  '       \n" +
-                "  \\ '_ .') .'      _( )_ .'        \n" +
-                " (_ (_) _) '   ___(_ o _)'          \n" +
-                "   /    \\   \\ |   |(_,_)'         \n" +
-                "   `-'`-'    \\|   `-'  /           \n" +
-                "  /  /   \\    \\\\      /          \n" +
-                " '--'     '----'`-..-'              ");
+        System.out.println("(♥◠‿◠)ﾉﾞ  认证授权中心启动成功   ლ(´ڡ`ლ)ﾞ ");
     }
 }
