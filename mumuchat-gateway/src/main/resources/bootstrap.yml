@@ -13,7 +13,7 @@ nacos:
 # 应用名称配置
 application:
   title: 网关服务
-  name: xueyi-gateway
+  name: mumuchat-gateway
 
 # Spring
 spring:

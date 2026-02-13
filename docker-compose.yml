@@ -24,7 +24,6 @@ services:
       retries: 10
 
   nacos:
-    # ✅ 使用与SQL文件匹配的版本 v2.5.3（SQL中包含config_info_gray表，为2.5.0+版本）
     image: nacos/nacos-server:v2.5.2
     container_name: mumuchat-nacos
     ports:

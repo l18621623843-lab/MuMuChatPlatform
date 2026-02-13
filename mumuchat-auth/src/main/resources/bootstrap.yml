@@ -13,7 +13,7 @@ nacos:
 # 应用名称配置
 application:
   title: 鉴权服务
-  name: xueyi-auth
+  name: mumuchat-auth
 
 # Spring
 spring:
