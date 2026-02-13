@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.file.domain.query.SysFileQuery;
 /**
  * 系统服务|素材模块|文件管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysFileService extends IBaseService<SysFileQuery, SysFileDto> {
 

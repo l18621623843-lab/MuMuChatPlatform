@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.organize.domain.query.SysUserQuery;
 /**
  * 系统服务|组织模块|用户管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysUserMapper extends BaseMapper<SysUserQuery, SysUserDto, SysUserPo> {

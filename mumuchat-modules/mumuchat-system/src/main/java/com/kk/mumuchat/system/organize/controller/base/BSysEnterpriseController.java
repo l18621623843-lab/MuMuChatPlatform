@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.organize.service.ISysEnterpriseService;
 /**
  * 系统服务|组织模块|企业管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysEnterpriseController extends BaseController<SysEnterpriseQuery, SysEnterpriseDto, ISysEnterpriseService> {
 

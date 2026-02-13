@@ -14,7 +14,7 @@ import com.kk.mumuchat.common.web.entity.mapper.TreeMapper;
  * @param <D>  Dto
  * @param <P>  Po
  * @param <PM> PoMapper
- * @author xueyi
+ * @author mumuchat
  */
 public class TreeHandleManagerImpl<Q extends P, D extends P, P extends TreeEntity<D>, PM extends TreeMapper<Q, D, P>, CT extends BaseConverter<Q, D, P>> extends BaseManagerImpl<Q, D, P, PM, CT> {
 

@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|组织模块|岗位 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysPostConverter extends BaseConverter<SysPostQuery, SysPostDto, SysPostPo> {

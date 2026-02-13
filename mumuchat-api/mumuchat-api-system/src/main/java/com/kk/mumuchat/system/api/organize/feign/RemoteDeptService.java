@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 系统服务|组织模块|部门服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteDeptService", path = "/inner/dept", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteDeptFallbackFactory.class)
 public interface RemoteDeptService extends RemoteSelectService<SysDeptDto> {

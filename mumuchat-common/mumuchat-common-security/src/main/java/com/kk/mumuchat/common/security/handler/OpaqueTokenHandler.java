@@ -22,7 +22,7 @@ import java.util.Optional;
 /**
  * 资源服务器 token处理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @RequiredArgsConstructor

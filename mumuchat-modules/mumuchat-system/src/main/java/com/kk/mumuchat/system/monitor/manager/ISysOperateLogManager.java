@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.log.domain.query.SysOperateLogQuery;
 /**
  * 系统服务|监控模块|操作日志管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysOperateLogManager extends IBaseManager<SysOperateLogQuery, SysOperateLogDto> {
 

@@ -5,7 +5,7 @@ import java.lang.reflect.Type;
 /**
  * 类型工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class TypeUtil extends cn.hutool.core.util.TypeUtil {
 

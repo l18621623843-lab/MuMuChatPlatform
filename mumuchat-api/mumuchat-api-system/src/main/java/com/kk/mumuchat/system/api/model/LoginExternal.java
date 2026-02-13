@@ -11,7 +11,7 @@ import java.io.Serial;
 /**
  * 外系统端 - 用户信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

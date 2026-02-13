@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.model.LoginExternal;
 /**
  * 外系统端 - 权限获取工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SecurityExternalUtils extends SecurityUtils {
 

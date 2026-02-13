@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 安全认证配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @EnableWebSecurity

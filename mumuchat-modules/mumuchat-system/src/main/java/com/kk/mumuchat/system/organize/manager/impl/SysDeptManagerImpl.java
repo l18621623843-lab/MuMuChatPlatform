@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|组织模块|部门管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysDeptManagerImpl extends TreeManagerImpl<SysDeptQuery, SysDeptDto, SysDeptPo, SysDeptMapper, SysDeptConverter> implements ISysDeptManager {

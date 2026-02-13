@@ -28,7 +28,7 @@ import java.util.Optional;
 /**
  * RabbitMQ 配置类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @AutoConfiguration

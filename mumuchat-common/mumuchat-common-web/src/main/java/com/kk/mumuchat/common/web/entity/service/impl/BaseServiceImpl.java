@@ -29,7 +29,7 @@ import java.util.Optional;
  * @param <D>   Dto
  * @param <C>   Correlate
  * @param <IDG> DtoIManager
- * @author xueyi
+ * @author mumuchat
  */
 public class BaseServiceImpl<Q extends BaseEntity, D extends BaseEntity, C extends Enum<? extends Enum<?>> & CorrelateService, IDG extends IBaseManager<Q, D>> extends BaseServiceHandle<Q, D, C, IDG> implements IBaseService<Q, D> {
 

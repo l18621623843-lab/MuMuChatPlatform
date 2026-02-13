@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 路由配置信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)

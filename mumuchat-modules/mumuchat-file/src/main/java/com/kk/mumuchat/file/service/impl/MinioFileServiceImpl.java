@@ -18,7 +18,7 @@ import java.io.InputStream;
 /**
  * Minio 文件存储
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class MinioFileServiceImpl implements IFileService {

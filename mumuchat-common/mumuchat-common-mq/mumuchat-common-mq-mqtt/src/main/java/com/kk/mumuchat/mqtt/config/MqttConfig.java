@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * 服务监听客户端配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 @SuppressWarnings(value = {"rawtypes"})

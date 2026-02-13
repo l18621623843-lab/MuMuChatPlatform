@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.authority.domain.merge.SysTenantAuthGroupMerge;
 /**
  * 系统服务|权限模块|企业-企业权限组关联 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysTenantAuthGroupMergeMapper extends BasicMapper<SysTenantAuthGroupMerge> {

@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * Basis 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class BasisEntity implements Serializable {

@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysImExQuery;
 /**
  * 导入导出配置管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysImExMapper extends BaseMapper<SysImExQuery, SysImExDto, SysImExPo> {

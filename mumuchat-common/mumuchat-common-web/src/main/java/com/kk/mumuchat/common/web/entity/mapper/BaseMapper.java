@@ -8,7 +8,7 @@ import com.kk.mumuchat.common.core.web.entity.base.BaseEntity;
  * @param <Q> Query
  * @param <D> Dto
  * @param <P> Po
- * @author xueyi
+ * @author mumuchat
  */
 public interface BaseMapper<Q extends P, D extends P, P extends BaseEntity> extends BasicMapper<P> {
 }

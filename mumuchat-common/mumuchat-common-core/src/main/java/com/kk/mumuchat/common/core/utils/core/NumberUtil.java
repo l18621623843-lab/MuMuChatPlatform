@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * 数字工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class NumberUtil extends cn.hutool.core.util.NumberUtil implements NumberPool {
 

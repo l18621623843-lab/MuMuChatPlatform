@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|监控模块|在线用户监控 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService {

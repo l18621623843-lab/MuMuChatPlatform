@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 /**
  * 日志记录 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class LoginLogServiceImpl implements ILoginLogService {

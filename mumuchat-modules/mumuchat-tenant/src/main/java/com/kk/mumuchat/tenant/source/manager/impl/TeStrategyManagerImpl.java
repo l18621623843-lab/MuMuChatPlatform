@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * 租户服务 | 策略模块 | 源策略管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class TeStrategyManagerImpl extends BaseManagerImpl<TeStrategyQuery, TeStrategyDto, TeStrategyPo, TeStrategyMapper, TeStrategyConverter> implements ITeStrategyManager {

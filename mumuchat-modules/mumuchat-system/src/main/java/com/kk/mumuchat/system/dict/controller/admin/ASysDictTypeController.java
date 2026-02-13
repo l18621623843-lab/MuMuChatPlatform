@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * 系统服务|字典模块|字典类型管理|管理端 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AdminAuth
 @RestController

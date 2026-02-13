@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * 系统服务|权限模块|企业权限组管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysAuthGroupService extends IBaseService<SysAuthGroupQuery, SysAuthGroupDto> {
 

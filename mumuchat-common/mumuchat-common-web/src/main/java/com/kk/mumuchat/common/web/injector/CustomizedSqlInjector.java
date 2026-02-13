@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * sql注入器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CustomizedSqlInjector extends MPJSqlInjector {
 

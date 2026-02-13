@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * 系统服务|权限模块|模块管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysModuleManager extends IBaseManager<SysModuleQuery, SysModuleDto> {
 

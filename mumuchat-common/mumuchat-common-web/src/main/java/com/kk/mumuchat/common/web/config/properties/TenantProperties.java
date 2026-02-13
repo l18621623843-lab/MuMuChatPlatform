@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 租户表控制配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 @ConfigurationProperties(prefix = "xueyi.tenant")

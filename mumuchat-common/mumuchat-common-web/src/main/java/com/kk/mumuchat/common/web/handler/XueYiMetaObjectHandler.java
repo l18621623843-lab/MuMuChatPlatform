@@ -7,7 +7,7 @@ import org.apache.ibatis.reflection.MetaObject;
 /**
  * 自动填充处理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class XueYiMetaObjectHandler implements MetaObjectHandler {
 

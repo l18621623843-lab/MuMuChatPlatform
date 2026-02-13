@@ -10,7 +10,7 @@ import java.util.function.Function;
 /**
  * 缓存管理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface IStorageService {
 

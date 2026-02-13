@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 /**
  * 自定义注入注解
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Inherited
 @Documented

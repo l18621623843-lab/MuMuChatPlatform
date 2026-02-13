@@ -8,7 +8,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 /**
  * MQTT动态启动
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class MqttCondition implements Condition {
 

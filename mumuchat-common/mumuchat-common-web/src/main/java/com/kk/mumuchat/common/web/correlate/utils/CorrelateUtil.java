@@ -41,7 +41,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 主从关联工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @SuppressWarnings({"unchecked", "rawtypes"})

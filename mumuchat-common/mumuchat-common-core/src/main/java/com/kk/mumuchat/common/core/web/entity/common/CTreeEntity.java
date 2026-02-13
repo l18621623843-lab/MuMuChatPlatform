@@ -13,7 +13,7 @@ import java.io.Serial;
  * Tree 混合基类
  *
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

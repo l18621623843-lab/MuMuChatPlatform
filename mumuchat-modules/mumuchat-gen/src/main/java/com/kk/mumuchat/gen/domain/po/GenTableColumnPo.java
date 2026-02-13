@@ -11,7 +11,7 @@ import java.io.Serial;
 /**
  * 业务字段 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -5,7 +5,7 @@ import com.kk.mumuchat.auth.form.RegisterBody;
 /**
  * 登录校验 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ILoginService {
 

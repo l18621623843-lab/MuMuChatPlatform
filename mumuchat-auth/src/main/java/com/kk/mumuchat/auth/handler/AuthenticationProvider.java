@@ -31,7 +31,7 @@ import java.util.Optional;
 /**
  * 身份认证 处理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
 

@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 任务执行工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class JobInvokeUtil {

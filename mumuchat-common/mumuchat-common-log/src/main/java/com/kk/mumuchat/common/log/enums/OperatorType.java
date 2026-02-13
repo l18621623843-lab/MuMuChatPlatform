@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 操作人类别
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

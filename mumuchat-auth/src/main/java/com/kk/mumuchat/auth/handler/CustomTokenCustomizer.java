@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.server.authorization.token.OAuth2Toke
 /**
  * 自定义令牌
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CustomTokenCustomizer implements OAuth2TokenCustomizer<OAuth2TokenClaimsContext> {
 

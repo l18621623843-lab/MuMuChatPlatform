@@ -28,7 +28,7 @@ import java.util.Optional;
 /**
  * 自定义登录操作类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class AuthenticationEventHandlerImpl implements AuthenticationSuccessHandler, AuthenticationFailureHandler {

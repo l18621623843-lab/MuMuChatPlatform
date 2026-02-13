@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.file.domain.query.SysFileFolderQuery;
 /**
  * 系统服务|素材模块|文件分类管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysFileFolderService extends ITreeService<SysFileFolderQuery, SysFileFolderDto> {
 }

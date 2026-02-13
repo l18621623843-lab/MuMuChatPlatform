@@ -19,7 +19,7 @@ import static com.baomidou.mybatisplus.annotation.SqlCondition.LIKE_RIGHT;
 /**
  * Base 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

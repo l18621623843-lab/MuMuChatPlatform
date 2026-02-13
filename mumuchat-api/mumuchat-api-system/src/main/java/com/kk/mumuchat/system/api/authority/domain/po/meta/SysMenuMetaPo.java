@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 菜单路由元数据对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class SysMenuMetaPo {

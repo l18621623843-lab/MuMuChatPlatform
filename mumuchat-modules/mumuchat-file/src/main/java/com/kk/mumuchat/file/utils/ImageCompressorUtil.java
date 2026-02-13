@@ -19,7 +19,7 @@ import java.nio.file.Path;
 /**
  * 图片压缩工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class ImageCompressorUtil {

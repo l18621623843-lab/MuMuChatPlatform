@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * 融合网关模块
  *
- * @author xueyi
+ * @author mumuchat
  */
 @ComponentScan(basePackages = {
         "com.kk.mumuchat.gateway",

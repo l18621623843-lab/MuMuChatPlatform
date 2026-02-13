@@ -7,7 +7,7 @@ import com.kk.mumuchat.tenant.api.tenant.domain.query.TeTenantQuery;
 /**
  * 租户服务 | 租户模块 | 租户管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ITeTenantManager extends IBaseManager<TeTenantQuery, TeTenantDto> {
 

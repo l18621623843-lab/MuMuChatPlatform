@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 /**
  * 租户通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class TenantConstants {
 

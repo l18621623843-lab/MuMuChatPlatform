@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 操作类型通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CorrelateConstants {
 

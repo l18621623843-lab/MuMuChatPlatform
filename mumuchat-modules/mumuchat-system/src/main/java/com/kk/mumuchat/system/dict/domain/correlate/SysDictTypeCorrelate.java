@@ -20,7 +20,7 @@ import static com.kk.mumuchat.common.web.correlate.contant.CorrelateConstants.Su
 /**
  * 系统服务|字典模块|字典类型 关联映射
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

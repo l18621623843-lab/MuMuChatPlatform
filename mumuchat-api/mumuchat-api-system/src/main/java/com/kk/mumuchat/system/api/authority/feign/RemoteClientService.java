@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 系统服务|权限模块|客户端认证服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteClientService", path = "/inner/client", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteClientFallbackFactory.class)
 public interface RemoteClientService {

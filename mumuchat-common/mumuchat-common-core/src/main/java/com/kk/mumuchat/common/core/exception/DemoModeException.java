@@ -7,7 +7,7 @@ import java.io.Serial;
 /**
  * 演示模式异常
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class DemoModeException extends RuntimeException {

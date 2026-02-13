@@ -9,7 +9,7 @@ import java.io.Serial;
 /**
  * 系统服务|监控模块|访问日志 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

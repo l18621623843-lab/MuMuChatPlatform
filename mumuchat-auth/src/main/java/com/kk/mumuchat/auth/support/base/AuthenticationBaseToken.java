@@ -18,7 +18,7 @@ import java.util.Set;
 /**
  * 自定义授权模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 public abstract class AuthenticationBaseToken extends AbstractAuthenticationToken {

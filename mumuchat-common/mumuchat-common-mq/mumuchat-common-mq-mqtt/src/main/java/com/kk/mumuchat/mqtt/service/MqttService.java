@@ -3,7 +3,7 @@ package com.kk.mumuchat.mqtt.service;
 /**
  * MQTT消息 工具类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 public interface MqttService {
 

@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 网络协议通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class HttpConstants {
 

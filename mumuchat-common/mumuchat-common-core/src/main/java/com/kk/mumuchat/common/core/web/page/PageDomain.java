@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 分页数据
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class PageDomain {

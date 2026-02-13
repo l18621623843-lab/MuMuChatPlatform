@@ -27,7 +27,7 @@ import java.util.Optional;
 /**
  * 默认权限获取工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @SuppressWarnings(value = {"unchecked", "rawtypes"})
 public class SecurityUtils {

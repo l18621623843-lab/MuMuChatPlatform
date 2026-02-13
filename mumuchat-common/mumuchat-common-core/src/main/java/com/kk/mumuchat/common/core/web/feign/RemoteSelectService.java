@@ -14,7 +14,7 @@ import java.util.List;
  * 远程查询服务层
  *
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 public interface RemoteSelectService<D extends BaseEntity> {
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * 远程缓存服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface RemoteCacheService {
 

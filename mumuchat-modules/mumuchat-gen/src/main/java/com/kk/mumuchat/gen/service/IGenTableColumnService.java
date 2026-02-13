@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 业务字段管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface IGenTableColumnService extends IBaseService<GenTableColumnQuery, GenTableColumnDto> {
 

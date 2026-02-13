@@ -5,7 +5,7 @@ import com.kk.mumuchat.common.core.constant.basic.SecurityConstants;
 /**
  * Jwt工具类 | 会员端
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class JwtMemberUtil extends JwtUtil {
 

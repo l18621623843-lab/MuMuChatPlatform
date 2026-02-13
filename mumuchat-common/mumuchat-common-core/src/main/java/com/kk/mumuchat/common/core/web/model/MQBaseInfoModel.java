@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * MQ消息基础信息 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class MQBaseInfoModel implements Serializable {

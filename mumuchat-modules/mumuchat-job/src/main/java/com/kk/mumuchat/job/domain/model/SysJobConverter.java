@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 调度任务 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysJobConverter extends BaseConverter<SysJobQuery, SysJobDto, SysJobPo> {

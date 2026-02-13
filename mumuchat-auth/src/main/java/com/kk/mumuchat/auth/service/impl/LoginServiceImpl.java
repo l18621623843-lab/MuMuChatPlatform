@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 登录校验 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class LoginServiceImpl implements ILoginService {

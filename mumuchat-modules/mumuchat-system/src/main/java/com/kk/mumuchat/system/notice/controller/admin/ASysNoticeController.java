@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 系统服务|消息模块|通知公告管理|管理端 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AdminAuth
 @RestController

@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * 验证码过滤器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class ValidateCodeFilter extends AbstractGatewayFilterFactory<Object> {

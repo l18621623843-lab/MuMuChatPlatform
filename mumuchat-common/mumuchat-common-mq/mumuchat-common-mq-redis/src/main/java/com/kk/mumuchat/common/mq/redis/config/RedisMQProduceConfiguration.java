@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Redis 消息队列 Producer 配置类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @AutoConfiguration(after = RedisConfig.class)

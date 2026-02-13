@@ -11,7 +11,7 @@ import com.kk.mumuchat.common.core.web.entity.cache.ICusCacheService;
 /**
  * 缓存工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CacheUtil {
 

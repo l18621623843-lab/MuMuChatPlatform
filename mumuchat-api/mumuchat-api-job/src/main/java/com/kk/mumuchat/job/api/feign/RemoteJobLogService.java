@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 调度日志服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteJobLogService", path = "/inner/job/log", value = "${xueyi.remote.service.job}", fallbackFactory = RemoteJobLogFallbackFactory.class)
 public interface RemoteJobLogService {

@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 内部认证注解
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

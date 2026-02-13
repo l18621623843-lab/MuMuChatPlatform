@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 自定义验证转换器 | 支付宝小程序模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AuthenticationAlipayMaConverter extends AuthenticationBaseConverter<AuthenticationAlipayMaToken> {
 

@@ -13,7 +13,7 @@ import org.apache.commons.io.IOUtils;
 /**
  * 系统服务|组织模块|部门管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysDeptController extends TreeController<SysDeptQuery, SysDeptDto, ISysDeptService> {
 

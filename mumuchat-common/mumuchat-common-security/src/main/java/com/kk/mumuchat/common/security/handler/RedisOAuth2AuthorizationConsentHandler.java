@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Redis授权认证器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class RedisOAuth2AuthorizationConsentHandler implements OAuth2AuthorizationConsentService {

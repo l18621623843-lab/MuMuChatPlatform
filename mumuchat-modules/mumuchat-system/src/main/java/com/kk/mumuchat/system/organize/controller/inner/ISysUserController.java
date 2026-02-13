@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 系统服务|组织模块|用户管理|内部调用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @InnerAuth
 @RestController

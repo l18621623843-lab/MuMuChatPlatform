@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.constant.basic;
 /**
  * 基类通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EntityConstants {
 

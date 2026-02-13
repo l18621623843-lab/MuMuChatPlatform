@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.monitor.service.ISysOperateLogService;
 /**
  * 系统服务|监控模块|操作日志管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysOperateLogController extends BaseController<SysOperateLogQuery, SysOperateLogDto, ISysOperateLogService> {
 

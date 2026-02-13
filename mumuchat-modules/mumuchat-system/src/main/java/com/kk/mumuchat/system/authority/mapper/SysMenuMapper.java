@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.authority.domain.query.SysMenuQuery;
 /**
  * 系统服务|权限模块|菜单管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysMenuMapper extends TreeMapper<SysMenuQuery, SysMenuDto, SysMenuPo> {

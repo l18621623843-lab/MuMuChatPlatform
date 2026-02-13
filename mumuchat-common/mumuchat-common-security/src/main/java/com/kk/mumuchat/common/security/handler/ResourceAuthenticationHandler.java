@@ -20,7 +20,7 @@ import java.io.PrintWriter;
 /**
  * 身份认证失效处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @RequiredArgsConstructor

@@ -16,7 +16,7 @@ import java.util.function.Supplier;
  * 获取当前线程变量中的 企业Id | 企业账号 | 租户类型 | 用户id | 用户账号 | 用户昵称 | 用户类型 | Token等信息
  * 注意： 必须在网关通过请求头的方法传入，同时在HeaderInterceptor拦截器设置值。 否则这里无法获取
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SecurityContextHolder {
 

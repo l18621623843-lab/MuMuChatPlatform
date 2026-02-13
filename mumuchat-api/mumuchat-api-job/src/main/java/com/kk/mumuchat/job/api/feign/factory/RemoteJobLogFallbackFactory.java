@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * 调度日志服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

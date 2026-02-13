@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 组织通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class OrganizeConstants {
 

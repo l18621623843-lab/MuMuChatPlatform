@@ -13,7 +13,7 @@ import java.util.Collection;
 /**
  * MyBatis Plus Join QueryWrapper 拓展类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class JoinLambdaWrapper<T> extends MPJLambdaWrapper<T> {

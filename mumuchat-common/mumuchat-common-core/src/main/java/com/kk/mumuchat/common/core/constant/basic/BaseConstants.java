@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BaseConstants {
 

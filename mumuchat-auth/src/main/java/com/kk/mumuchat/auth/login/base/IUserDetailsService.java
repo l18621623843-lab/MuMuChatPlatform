@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 身份验证 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface IUserDetailsService extends Ordered {
 

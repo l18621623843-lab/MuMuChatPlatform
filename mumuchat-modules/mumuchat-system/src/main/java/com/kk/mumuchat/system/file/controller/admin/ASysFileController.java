@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * 系统服务|素材模块|文件管理|管理端 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AdminAuth
 @RestController

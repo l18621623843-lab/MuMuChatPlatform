@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 /**
  * 数据源通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SourceConstants {
 

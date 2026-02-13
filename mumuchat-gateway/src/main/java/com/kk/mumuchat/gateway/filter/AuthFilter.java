@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
 /**
  * 网关鉴权
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class AuthFilter implements WebFilter {

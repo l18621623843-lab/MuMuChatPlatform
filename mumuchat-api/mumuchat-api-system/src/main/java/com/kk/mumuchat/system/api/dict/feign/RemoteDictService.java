@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * 系统服务|字典模块|字典服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteDictService", path = "/inner/dict/type", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteDictFallbackFactory.class)
 public interface RemoteDictService extends RemoteCacheService {

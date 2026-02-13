@@ -18,7 +18,7 @@ import java.util.Optional;
 /**
  * token 控制
  *
- * @author xueyi
+ * @author mumuchat
  */
 @RestController
 @RequestMapping("/token")

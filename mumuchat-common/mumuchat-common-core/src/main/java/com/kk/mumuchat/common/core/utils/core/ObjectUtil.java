@@ -6,7 +6,7 @@ import java.util.function.Function;
 /**
  * 对象工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class ObjectUtil extends cn.hutool.core.util.ObjectUtil {
 

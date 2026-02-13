@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|字典模块|字典类型管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysDictTypeManagerImpl extends BaseManagerImpl<SysDictTypeQuery, SysDictTypeDto, SysDictTypePo, SysDictTypeMapper, SysDictTypeConverter> implements ISysDictTypeManager {

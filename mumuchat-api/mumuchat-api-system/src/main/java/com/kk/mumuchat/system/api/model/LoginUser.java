@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 管理端 - 用户信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

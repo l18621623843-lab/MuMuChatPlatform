@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 路由常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class RouteV2Constants {
 

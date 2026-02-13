@@ -12,7 +12,7 @@ import java.util.Arrays;
 /**
  * 图片处理工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class ImageUtil {

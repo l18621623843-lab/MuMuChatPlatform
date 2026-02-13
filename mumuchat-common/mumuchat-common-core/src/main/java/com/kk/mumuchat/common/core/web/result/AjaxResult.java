@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * 操作消息提醒
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class AjaxResult extends HashMap<String, Object> {

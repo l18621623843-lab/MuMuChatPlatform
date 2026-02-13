@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 /**
  * 融合业务模块
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableCustomConfig
 @EnableCustomSwagger

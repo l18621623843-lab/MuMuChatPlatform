@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Redisson配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Slf4j

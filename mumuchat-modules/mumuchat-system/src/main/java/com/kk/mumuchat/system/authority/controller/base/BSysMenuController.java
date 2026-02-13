@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 系统服务|权限模块|菜单管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysMenuController extends TreeController<SysMenuQuery, SysMenuDto, ISysMenuService> {
 

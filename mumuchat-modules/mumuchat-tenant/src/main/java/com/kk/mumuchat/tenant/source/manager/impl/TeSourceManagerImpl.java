@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * 租户服务 | 策略模块 | 数据源管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class TeSourceManagerImpl extends BaseManagerImpl<TeSourceQuery, TeSourceDto, TeSourcePo, TeSourceMapper, TeSourceConverter> implements ITeSourceManager {

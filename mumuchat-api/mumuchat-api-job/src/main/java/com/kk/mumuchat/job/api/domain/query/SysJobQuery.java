@@ -9,7 +9,7 @@ import java.io.Serial;
 /**
  * 调度任务 数据查询对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

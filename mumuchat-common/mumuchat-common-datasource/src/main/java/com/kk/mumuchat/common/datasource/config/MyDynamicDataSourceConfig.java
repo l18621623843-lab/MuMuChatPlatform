@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 源访问策略注入
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 @AutoConfigureBefore(DynamicDataSourceAutoConfiguration.class)

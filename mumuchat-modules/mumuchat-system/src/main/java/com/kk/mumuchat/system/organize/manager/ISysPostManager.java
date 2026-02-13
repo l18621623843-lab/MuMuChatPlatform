@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统服务|组织模块|岗位管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysPostManager extends IBaseManager<SysPostQuery, SysPostDto> {
 

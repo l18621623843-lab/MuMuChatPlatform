@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.authority.domain.query.SysRoleQuery;
 /**
  * 岗位管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysRoleMapper extends BaseMapper<SysRoleQuery, SysRoleDto, SysRolePo> {

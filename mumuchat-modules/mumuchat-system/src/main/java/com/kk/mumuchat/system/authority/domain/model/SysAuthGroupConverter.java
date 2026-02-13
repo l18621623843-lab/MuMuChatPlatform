@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|权限模块|企业权限组 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysAuthGroupConverter extends BaseConverter<SysAuthGroupQuery, SysAuthGroupDto, SysAuthGroupPo> {

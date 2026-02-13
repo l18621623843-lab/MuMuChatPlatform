@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|权限模块|企业权限组管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysAuthGroupManagerImpl extends BaseManagerImpl<SysAuthGroupQuery, SysAuthGroupDto, SysAuthGroupPo, SysAuthGroupMapper, SysAuthGroupConverter> implements ISysAuthGroupManager {

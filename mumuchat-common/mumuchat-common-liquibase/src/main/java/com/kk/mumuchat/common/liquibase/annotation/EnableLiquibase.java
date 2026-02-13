@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 启用Liquibase配置注解
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

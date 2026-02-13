@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * 默认用户信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class BaseLoginUser<User> implements UserDetails, OAuth2AuthenticatedPrincipal {

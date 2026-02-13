@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * URL工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class URLUtil extends cn.hutool.core.util.URLUtil {
 

@@ -20,7 +20,7 @@ import java.util.Collections;
 /**
  * Snowflake创建器 Redis实现
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

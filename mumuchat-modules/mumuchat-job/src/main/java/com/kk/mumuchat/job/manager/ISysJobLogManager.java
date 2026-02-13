@@ -7,7 +7,7 @@ import com.kk.mumuchat.job.api.domain.query.SysJobLogQuery;
 /**
  * 调度任务日志管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysJobLogManager extends IBaseManager<SysJobLogQuery, SysJobLogDto> {
 

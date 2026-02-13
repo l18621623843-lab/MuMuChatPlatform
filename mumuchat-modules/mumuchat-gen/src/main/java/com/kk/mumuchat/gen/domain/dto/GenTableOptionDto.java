@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * 业务其它生成选项 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class GenTableOptionDto implements Serializable {

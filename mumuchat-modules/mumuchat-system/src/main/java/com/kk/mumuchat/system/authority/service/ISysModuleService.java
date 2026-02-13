@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 系统服务|权限模块|模块管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysModuleService extends IBaseService<SysModuleQuery, SysModuleDto> {
 

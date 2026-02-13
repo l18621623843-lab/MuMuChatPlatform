@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 错误码 基础数据对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class ErrorCode {

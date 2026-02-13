@@ -20,7 +20,7 @@ import java.util.UUID;
 /**
  * MQTT发送客户端 | 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public abstract class MqttBaseSendClient<Callback extends MqttBaseSendCallBack, Properties extends MqttProperties> implements Ordered, MqttService {

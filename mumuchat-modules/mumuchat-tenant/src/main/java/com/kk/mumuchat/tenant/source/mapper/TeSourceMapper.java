@@ -9,7 +9,7 @@ import com.kk.mumuchat.tenant.api.source.domain.query.TeSourceQuery;
 /**
  * 租户服务 | 策略模块 | 数据源管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface TeSourceMapper extends BaseMapper<TeSourceQuery, TeSourceDto, TeSourcePo> {

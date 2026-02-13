@@ -23,7 +23,7 @@ import java.util.Optional;
 /**
  * Redis授权
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 @SuppressWarnings(value = {"unchecked", "rawtypes"})

@@ -14,7 +14,7 @@ import static com.kk.mumuchat.common.core.constant.basic.TenantConstants.ISOLATE
 /**
  * 租户策略源
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

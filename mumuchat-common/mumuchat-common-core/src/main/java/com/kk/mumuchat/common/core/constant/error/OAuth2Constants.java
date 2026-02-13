@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * OAuth2异常常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class OAuth2Constants {
 

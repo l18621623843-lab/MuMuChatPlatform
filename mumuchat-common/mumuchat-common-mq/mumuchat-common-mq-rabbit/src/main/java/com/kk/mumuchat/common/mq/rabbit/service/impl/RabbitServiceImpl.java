@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * RabbitMQ消息 工具类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 @Slf4j
 @Component

@@ -46,7 +46,7 @@ import static com.kk.mumuchat.common.core.constant.basic.SqlConstants.LIMIT_ONE;
 /**
  * 系统服务|组织模块|用户管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysUserManagerImpl extends BaseManagerImpl<SysUserQuery, SysUserDto, SysUserPo, SysUserMapper, SysUserConverter> implements ISysUserManager {

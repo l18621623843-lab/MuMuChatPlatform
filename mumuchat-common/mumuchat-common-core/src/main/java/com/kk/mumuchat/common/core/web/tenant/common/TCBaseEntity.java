@@ -13,7 +13,7 @@ import java.io.Serial;
 /**
  * Base 租户混合基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

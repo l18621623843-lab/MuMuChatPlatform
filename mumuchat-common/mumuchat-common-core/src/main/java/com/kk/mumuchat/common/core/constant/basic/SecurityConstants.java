@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 安全相关通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SecurityConstants {
 

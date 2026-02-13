@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 文件服务 | 文件管理 | 管理端 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AdminAuth
 @RestController

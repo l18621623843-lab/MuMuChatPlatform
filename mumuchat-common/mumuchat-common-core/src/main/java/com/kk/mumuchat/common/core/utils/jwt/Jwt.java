@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * JWT令牌封装
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class Jwt implements Serializable {

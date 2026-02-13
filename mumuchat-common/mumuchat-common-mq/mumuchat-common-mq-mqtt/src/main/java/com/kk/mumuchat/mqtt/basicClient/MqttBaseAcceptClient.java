@@ -18,7 +18,7 @@ import java.util.Optional;
 /**
  * MQTT接受服务的客户端 | 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @SuppressWarnings(value = {"rawtypes"})

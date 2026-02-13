@@ -6,7 +6,7 @@ import org.redisson.api.NameMapper;
 /**
  * 缓存key前缀处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CachePrefixHandler implements NameMapper {
 

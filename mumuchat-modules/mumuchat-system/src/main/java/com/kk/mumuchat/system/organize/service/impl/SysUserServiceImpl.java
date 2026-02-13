@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * 系统服务|组织模块|用户管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 @Isolate

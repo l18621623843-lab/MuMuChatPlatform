@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.authority.domain.merge.SysRoleMenuMerge;
 /**
  * 系统服务|权限模块|角色-菜单关联 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysRoleMenuMergeMapper extends BasicMapper<SysRoleMenuMerge> {

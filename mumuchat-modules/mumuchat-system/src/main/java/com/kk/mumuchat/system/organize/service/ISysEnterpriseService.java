@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.organize.domain.query.SysEnterpriseQuery;
 /**
  * 系统服务|组织模块|企业管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysEnterpriseService extends IBaseService<SysEnterpriseQuery, SysEnterpriseDto> {
 

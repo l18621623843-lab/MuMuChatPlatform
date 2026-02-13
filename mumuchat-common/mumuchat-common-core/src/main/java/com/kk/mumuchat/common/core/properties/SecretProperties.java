@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 安全配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 @ConfigurationProperties(prefix = "xueyi.security.secret")

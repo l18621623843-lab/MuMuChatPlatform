@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 /**
  * 认证授权中心
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableResourceServer
 @EnableRyFeignClients

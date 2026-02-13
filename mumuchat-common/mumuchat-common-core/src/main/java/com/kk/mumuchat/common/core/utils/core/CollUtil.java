@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * 集合工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class CollUtil extends cn.hutool.core.collection.CollUtil {

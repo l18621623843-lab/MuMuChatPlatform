@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * 远程查询&缓存服务层
  *
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 public interface RemoteSelectAndCacheService<D extends BaseEntity> extends RemoteSelectService<D> {
 

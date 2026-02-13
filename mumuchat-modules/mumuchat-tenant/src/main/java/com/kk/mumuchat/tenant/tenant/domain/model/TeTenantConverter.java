@@ -11,7 +11,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 租户服务 | 租户模块 | 租户 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface TeTenantConverter extends BaseConverter<TeTenantQuery, TeTenantDto, TeTenantPo> {

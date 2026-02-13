@@ -20,7 +20,7 @@ import java.util.function.Function;
 /**
  * 文件处理工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class FileUtil extends cn.hutool.core.io.FileUtil {
 

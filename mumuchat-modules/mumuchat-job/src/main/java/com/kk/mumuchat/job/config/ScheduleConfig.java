@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * 定时任务配置（单机部署建议删除此类和qrtz数据库表，默认走内存会最高效）
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 public class ScheduleConfig {

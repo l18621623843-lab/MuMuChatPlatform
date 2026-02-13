@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * 身份验证处理器 | 抖音小程序模式 | 后台账户
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

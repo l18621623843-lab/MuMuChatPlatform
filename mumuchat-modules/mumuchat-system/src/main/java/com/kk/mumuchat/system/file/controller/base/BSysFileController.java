@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.file.service.ISysFileService;
 /**
  * 系统服务|素材模块|文件管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysFileController extends BaseController<SysFileQuery, SysFileDto, ISysFileService> {
 

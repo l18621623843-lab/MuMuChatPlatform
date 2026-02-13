@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 租户服务 | 策略模块 | 数据源管理 | 通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BTeSourceController extends BaseController<TeSourceQuery, TeSourceDto, ITeSourceService> {
 

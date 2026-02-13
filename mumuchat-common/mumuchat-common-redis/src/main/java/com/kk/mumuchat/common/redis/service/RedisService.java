@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * redis 缓存管理实现类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 @Getter
 @Primary

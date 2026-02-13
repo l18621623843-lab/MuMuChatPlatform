@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 租户服务 | 租户模块 | 租户服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 租户服务 | 策略模块 | 源策略 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface TeStrategyConverter extends BaseConverter<TeStrategyQuery, TeStrategyDto, TeStrategyPo> {

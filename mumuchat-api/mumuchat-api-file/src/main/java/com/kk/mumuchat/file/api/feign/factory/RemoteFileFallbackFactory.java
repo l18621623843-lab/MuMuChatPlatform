@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 文件服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

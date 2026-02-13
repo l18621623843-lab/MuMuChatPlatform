@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 枚举工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EnumUtil extends cn.hutool.core.util.EnumUtil {
 

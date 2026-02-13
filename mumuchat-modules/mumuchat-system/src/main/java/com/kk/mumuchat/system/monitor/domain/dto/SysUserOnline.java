@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 系统服务|监控模块|在线用户监控
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class SysUserOnline {

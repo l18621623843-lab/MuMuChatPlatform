@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 从属关联关系定义对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public sealed class BaseCorrelate<CorrelateORM extends BaseCorrelate.ORM> implements Serializable permits Direct, Indirect, Remote {
@@ -43,7 +43,7 @@ public sealed class BaseCorrelate<CorrelateORM extends BaseCorrelate.ORM> implem
     /**
      * 关联映射执行对象
      *
-     * @author xueyi
+     * @author mumuchat
      */
     @Data
     public sealed static class ORM<T> implements Serializable permits Direct.ORM, Indirect.ORM, Remote.ORM {

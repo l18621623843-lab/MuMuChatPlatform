@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.monitor.service.ISysLoginLogService;
 /**
  * 系统服务|监控模块|访问日志管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysLoginLogController extends BaseController<SysLoginLogQuery, SysLoginLogDto, ISysLoginLogService> {
 

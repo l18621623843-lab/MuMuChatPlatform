@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 /**
  * 系统服务|字典模块|字典数据管理 业务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysDictDataServiceImpl extends BaseServiceImpl<SysDictDataQuery, SysDictDataDto, SysDictDataCorrelate, ISysDictDataManager> implements ISysDictDataService {

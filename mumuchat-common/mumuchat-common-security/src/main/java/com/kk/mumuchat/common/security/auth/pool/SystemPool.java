@@ -11,7 +11,7 @@ import com.kk.mumuchat.common.security.auth.pool.system.SysOrganizePool;
 /**
  * 系统服务 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface SystemPool extends SysAuthorityPool, SysDictPool, SysFilePool, SysMonitorPool, SysNoticePool, SysOrganizePool, SysExternalPool {
 }

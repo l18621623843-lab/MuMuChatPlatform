@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * MQTT发送客户端消息处理 | 默认
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

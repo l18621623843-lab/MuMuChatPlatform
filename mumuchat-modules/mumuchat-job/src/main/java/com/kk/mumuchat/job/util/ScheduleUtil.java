@@ -23,7 +23,7 @@ import org.quartz.TriggerKey;
 /**
  * 定时任务工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class ScheduleUtil {
 

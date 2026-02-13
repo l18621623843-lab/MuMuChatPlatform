@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 系统服务|组织模块|岗位服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remotePostService", path = "/inner/post", value = "${xueyi.remote.service.system}", fallbackFactory = RemotePostFallbackFactory.class)
 public interface RemotePostService {

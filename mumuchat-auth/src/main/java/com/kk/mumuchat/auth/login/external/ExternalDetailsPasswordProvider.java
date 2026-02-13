@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * 身份验证处理器 | 密码模式 | 后台账户
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class ExternalDetailsPasswordProvider implements IUserDetailsService {

@@ -54,7 +54,7 @@ import static com.kk.mumuchat.system.api.authority.constant.AuthorityConstants.M
 /**
  * 业务管理 业务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Service

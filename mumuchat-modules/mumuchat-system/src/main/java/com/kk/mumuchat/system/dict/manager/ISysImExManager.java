@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysImExQuery;
 /**
  * 导入导出配置管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysImExManager extends IBaseManager<SysImExQuery, SysImExDto> {
 

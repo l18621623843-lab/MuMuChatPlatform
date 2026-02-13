@@ -9,7 +9,7 @@ import com.kk.mumuchat.job.api.domain.query.SysJobQuery;
 /**
  * 调度任务管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysJobMapper extends BaseMapper<SysJobQuery, SysJobDto, SysJobPo> {

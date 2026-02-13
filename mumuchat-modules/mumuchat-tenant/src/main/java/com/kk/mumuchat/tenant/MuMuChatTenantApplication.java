@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 租户模块
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableLiquibase
 @EnableCustomConfig

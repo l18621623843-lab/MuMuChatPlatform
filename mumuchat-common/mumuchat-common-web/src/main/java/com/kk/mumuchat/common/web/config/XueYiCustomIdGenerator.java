@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.core.utils.core.IdUtil;
 /**
  * Mybatis-plus自定义ID生成器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class XueYiCustomIdGenerator implements IdentifierGenerator {
 

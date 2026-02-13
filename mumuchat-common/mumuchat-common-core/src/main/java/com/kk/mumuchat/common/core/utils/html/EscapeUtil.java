@@ -5,7 +5,7 @@ import com.kk.mumuchat.common.core.utils.core.StrUtil;
 /**
  * 转义和反转义工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EscapeUtil {
 

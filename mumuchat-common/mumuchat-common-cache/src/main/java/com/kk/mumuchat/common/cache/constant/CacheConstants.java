@@ -10,7 +10,7 @@ import lombok.Getter;
 /**
  * 缓存的key通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CacheConstants {
 

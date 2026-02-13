@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 异步调用日志服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Service

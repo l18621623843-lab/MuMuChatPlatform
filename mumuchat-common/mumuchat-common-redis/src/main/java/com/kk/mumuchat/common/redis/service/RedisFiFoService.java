@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * redis-FIFO队列 缓存管理实现类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 @Getter
 @Component

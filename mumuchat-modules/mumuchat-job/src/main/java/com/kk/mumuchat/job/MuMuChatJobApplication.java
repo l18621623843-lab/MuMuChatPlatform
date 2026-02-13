@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 定时任务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableCustomConfig
 @EnableCustomSwagger

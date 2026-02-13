@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 /**
  * 排除JSON敏感属性
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class PropertyPreExcludeFilter extends SimplePropertyPreFilter {

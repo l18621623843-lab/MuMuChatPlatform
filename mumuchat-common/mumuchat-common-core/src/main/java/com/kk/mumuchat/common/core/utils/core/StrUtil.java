@@ -10,7 +10,7 @@ import java.util.function.Function;
 /**
  * 字符串工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class StrUtil extends cn.hutool.core.util.StrUtil implements StrPool {
 

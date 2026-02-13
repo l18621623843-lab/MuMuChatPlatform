@@ -13,7 +13,7 @@ import java.math.BigInteger;
 /**
  * 租户标识序列化器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EnterpriseSerializer extends JsonSerializer<Long> {
 

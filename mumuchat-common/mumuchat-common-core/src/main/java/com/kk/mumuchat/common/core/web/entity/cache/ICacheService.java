@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 常规缓存通用规则
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ICacheService {
 

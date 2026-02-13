@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 /**
  * 时间工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class DateUtil extends org.apache.commons.lang3.time.DateUtils {
 

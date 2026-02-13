@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * 系统服务|组织模块|组织管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysOrganizeServiceImpl implements ISysOrganizeService {

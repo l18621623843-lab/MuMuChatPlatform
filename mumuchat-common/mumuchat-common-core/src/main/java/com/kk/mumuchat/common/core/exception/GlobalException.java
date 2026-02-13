@@ -10,7 +10,7 @@ import java.io.Serial;
 /**
  * 全局异常
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @NoArgsConstructor

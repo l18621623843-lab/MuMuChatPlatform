@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 文件服务 | 文件管理 | 通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class BFileController {

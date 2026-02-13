@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 数据自动注入注解
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Documented
 @Target(ElementType.METHOD)

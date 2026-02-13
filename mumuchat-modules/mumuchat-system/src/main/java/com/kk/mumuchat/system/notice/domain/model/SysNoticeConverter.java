@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|消息模块|通知公告 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysNoticeConverter extends BaseConverter<SysNoticeQuery, SysNoticeDto, SysNoticePo> {

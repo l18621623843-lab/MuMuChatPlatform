@@ -19,7 +19,7 @@ import java.util.Objects;
 /**
  * 系统服务|字典模块|参数管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysConfigController extends BaseController<SysConfigQuery, SysConfigDto, ISysConfigService> {
 

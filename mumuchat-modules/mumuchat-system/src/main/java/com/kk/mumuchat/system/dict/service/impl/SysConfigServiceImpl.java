@@ -35,7 +35,7 @@ import java.util.function.Function;
 /**
  * 系统服务|字典模块|参数管理 服务层实现
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysConfigServiceImpl extends BaseServiceImpl<SysConfigQuery, SysConfigDto, SysConfigCorrelate, ISysConfigManager> implements ISysConfigService {

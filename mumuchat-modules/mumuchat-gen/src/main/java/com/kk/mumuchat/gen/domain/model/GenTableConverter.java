@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 业务 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface GenTableConverter extends BaseConverter<GenTableQuery, GenTableDto, GenTablePo> {

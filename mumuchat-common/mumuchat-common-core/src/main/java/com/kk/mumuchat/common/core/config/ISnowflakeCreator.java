@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.core.utils.core.IdUtil;
 /**
  * Snowflake创建器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISnowflakeCreator {
 

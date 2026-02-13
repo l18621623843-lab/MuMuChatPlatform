@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * 租户服务 | 租户模块 | 租户管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class TeTenantManagerImpl extends BaseManagerImpl<TeTenantQuery, TeTenantDto, TeTenantPo, TeTenantMapper, TeTenantConverter> implements ITeTenantManager {

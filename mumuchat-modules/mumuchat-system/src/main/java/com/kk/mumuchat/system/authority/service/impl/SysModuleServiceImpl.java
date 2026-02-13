@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 /**
  * 系统服务|权限模块|模块管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysModuleServiceImpl extends BaseServiceImpl<SysModuleQuery, SysModuleDto, SysModuleCorrelate, ISysModuleManager> implements ISysModuleService {

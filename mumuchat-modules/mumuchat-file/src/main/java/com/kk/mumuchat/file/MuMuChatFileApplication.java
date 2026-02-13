@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
 /**
  * 文件服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableCustomSwagger
 @EnableResourceServer

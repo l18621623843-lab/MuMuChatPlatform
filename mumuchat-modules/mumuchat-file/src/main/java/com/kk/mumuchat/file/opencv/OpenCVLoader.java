@@ -14,7 +14,7 @@ import java.nio.file.StandardCopyOption;
  * 用于在应用启动时动态加载 OpenCV 的 native 库（如 .dll、.so、.dylib），
  * 支持 Windows、Linux 和 macOS 平台。
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class OpenCVLoader {

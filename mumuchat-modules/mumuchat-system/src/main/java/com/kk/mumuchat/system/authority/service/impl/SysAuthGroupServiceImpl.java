@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * 系统服务|权限模块|企业权限组管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysAuthGroupServiceImpl extends BaseServiceImpl<SysAuthGroupQuery, SysAuthGroupDto, SysAuthGroupCorrelate, ISysAuthGroupManager> implements ISysAuthGroupService {

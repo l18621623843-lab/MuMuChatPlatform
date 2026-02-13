@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * MQTT配置对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

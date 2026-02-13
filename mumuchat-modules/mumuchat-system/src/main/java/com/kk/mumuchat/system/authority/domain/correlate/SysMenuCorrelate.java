@@ -25,7 +25,7 @@ import static com.kk.mumuchat.common.web.correlate.contant.CorrelateConstants.Su
 /**
  * 系统服务|权限模块|菜单 关联映射
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

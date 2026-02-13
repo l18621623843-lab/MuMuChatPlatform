@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|监控模块|访问日志管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysLoginLogServiceImpl extends BaseServiceImpl<SysLoginLogQuery, SysLoginLogDto, SysLoginLogCorrelate, ISysLoginLogManager> implements ISysLoginLogService {

@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.file.domain.query.SysFileFolderQuery;
 /**
  * 系统服务|素材模块|文件分类管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysFileFolderMapper extends TreeMapper<SysFileFolderQuery, SysFileFolderDto, SysFileFolderPo> {

@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 代码生成管理 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @RestController
 @RequestMapping("/admin/gen")

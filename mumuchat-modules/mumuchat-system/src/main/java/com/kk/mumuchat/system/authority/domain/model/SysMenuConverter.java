@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|权限模块|菜单 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysMenuConverter extends TreeConverter<SysMenuQuery, SysMenuDto, SysMenuPo> {

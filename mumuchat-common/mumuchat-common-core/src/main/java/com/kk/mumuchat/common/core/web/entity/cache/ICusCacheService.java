@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 /**
  * 自定义缓存管理规则
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ICusCacheService extends ICacheService {
 

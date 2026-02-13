@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * 文件管理服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

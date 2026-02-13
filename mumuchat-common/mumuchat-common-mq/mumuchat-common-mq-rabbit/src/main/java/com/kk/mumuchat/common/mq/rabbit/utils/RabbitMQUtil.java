@@ -11,7 +11,7 @@ import org.springframework.amqp.core.MessageProperties;
 /**
  * RabbitMQ 消息处理工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class RabbitMQUtil {

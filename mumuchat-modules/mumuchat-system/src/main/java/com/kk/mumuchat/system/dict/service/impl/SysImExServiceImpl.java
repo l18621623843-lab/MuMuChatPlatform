@@ -35,7 +35,7 @@ import java.util.function.Function;
 /**
  * 导入导出配置管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysImExServiceImpl extends BaseServiceImpl<SysImExQuery, SysImExDto, SysImExCorrelate, ISysImExManager> implements ISysImExService {

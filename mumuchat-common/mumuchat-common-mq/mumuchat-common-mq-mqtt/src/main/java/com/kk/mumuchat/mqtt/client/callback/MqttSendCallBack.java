@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * MQTT发送客户端的回调 | 默认
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

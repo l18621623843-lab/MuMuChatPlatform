@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 /**
  * redis 基础缓存管理实现类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 @SuppressWarnings(value = {"unchecked", "rawtypes"})
 public abstract class RedisBaseService implements IStorageService, INumStorageService {

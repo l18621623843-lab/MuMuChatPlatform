@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.log.domain.query.SysLoginLogQuery;
 /**
  * 系统服务|监控模块|访问日志管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysLoginLogService extends IBaseService<SysLoginLogQuery, SysLoginLogDto> {
 

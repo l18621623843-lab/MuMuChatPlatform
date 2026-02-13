@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 业务管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface IGenTableManager extends IBaseManager<GenTableQuery, GenTableDto> {
 

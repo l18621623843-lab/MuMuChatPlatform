@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 外系统端登录|内部调用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @InnerAuth
 @RestController

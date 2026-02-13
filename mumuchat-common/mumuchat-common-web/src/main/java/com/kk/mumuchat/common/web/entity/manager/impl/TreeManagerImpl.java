@@ -33,7 +33,7 @@ import static com.kk.mumuchat.common.core.constant.basic.SqlConstants.TREE_LEVEL
  * @param <D>  Dto
  * @param <P>  Po
  * @param <PM> PoMapper
- * @author xueyi
+ * @author mumuchat
  */
 public class TreeManagerImpl<Q extends P, D extends P, P extends TreeEntity<D>, PM extends TreeMapper<Q, D, P>, CT extends BaseConverter<Q, D, P>> extends TreeHandleManagerImpl<Q, D, P, PM, CT> implements ITreeManager<Q, D> {
 

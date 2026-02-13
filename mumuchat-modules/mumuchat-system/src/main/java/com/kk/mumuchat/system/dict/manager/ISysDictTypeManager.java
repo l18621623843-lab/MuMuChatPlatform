@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysDictTypeQuery;
 /**
  * 系统服务|字典模块|字典类型管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysDictTypeManager extends IBaseManager<SysDictTypeQuery, SysDictTypeDto> {
 

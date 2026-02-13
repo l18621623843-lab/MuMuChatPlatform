@@ -30,7 +30,7 @@ import java.util.UUID;
 /**
  * 自定义令牌
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CustomTokenGenerator implements OAuth2TokenGenerator<OAuth2AccessToken> {
 

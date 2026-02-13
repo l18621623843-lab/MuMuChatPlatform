@@ -18,7 +18,7 @@ import java.util.Optional;
 /**
  * 定时任务|调度任务管理 | 通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysJobController extends BaseController<SysJobQuery, SysJobDto, ISysJobService> {
 

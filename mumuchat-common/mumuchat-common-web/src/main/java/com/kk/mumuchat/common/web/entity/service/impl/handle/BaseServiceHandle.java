@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
  * @param <D>   Dto
  * @param <C>   Correlate
  * @param <IDG> DtoIManager
- * @author xueyi
+ * @author mumuchat
  */
 public class BaseServiceHandle<Q extends BaseEntity, D extends BaseEntity, C extends Enum<? extends Enum<?>> & CorrelateService, IDG extends IBaseManager<Q, D>> extends BaseCorrelateHandle<D, C> implements BaseCacheHandle<D> {
 

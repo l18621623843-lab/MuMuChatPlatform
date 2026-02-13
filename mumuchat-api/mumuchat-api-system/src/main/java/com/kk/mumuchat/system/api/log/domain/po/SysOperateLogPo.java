@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 /**
  * 系统服务|监控模块|操作日志 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

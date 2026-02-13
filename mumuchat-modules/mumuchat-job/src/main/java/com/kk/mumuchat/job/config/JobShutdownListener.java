@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 定时任务关闭监听器
  * 监听Spring应用上下文关闭事件，在应用关闭时清理定时任务相关资源
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class JobShutdownListener implements ApplicationListener<ContextClosedEvent> {

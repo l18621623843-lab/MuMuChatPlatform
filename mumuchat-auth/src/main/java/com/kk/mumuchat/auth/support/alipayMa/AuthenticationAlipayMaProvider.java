@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.server.authorization.token.OAuth2Toke
 /**
  * 自定义授权处理器 | 支付宝小程序模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class AuthenticationAlipayMaProvider extends AuthenticationBaseProvider<AuthenticationAlipayMaToken> {

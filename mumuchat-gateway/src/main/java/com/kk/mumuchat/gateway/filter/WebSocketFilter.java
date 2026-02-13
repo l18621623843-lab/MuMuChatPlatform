@@ -16,7 +16,7 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.G
 /**
  * webSocket转发过滤器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class WebSocketFilter implements GlobalFilter, Ordered {

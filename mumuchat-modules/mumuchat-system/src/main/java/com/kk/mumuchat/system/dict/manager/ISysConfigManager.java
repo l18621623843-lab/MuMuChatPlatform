@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysConfigQuery;
 /**
  * 系统服务|字典模块|参数管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysConfigManager extends IBaseManager<SysConfigQuery, SysConfigDto> {
 

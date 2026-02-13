@@ -13,7 +13,7 @@ import java.util.function.Function;
  * 服务层 操作方法 基类实现通用缓存处理
  *
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 public interface BaseCacheHandle<D extends BaseEntity> {
 

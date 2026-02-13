@@ -17,7 +17,7 @@ import java.util.Optional;
 /**
  * MQTT发送客户端的回调 | 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public abstract class MqttBaseSendCallBack implements MqttCallbackExtended {

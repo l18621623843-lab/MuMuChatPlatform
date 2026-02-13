@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysConfigQuery;
 /**
  * 系统服务|字典模块|参数管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysConfigMapper extends BaseMapper<SysConfigQuery, SysConfigDto, SysConfigPo> {

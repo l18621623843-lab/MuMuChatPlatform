@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.organize.domain.query.SysDeptQuery;
 /**
  * 系统服务|组织模块|部门管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysDeptService extends ITreeService<SysDeptQuery, SysDeptDto> {
 

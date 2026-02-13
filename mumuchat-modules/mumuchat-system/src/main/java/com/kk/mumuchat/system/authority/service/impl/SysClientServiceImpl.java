@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|权限模块|客户端管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysClientServiceImpl extends BaseServiceImpl<SysClientQuery, SysClientDto, SysClientCorrelate, ISysClientManager> implements ISysClientService {

@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 租户服务 | 策略模块 | 源策略管理 | 通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BTeStrategyController extends BaseController<TeStrategyQuery, TeStrategyDto, ITeStrategyService> {
 

@@ -10,7 +10,7 @@ import java.io.Serial;
 /**
  * 调度日志 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

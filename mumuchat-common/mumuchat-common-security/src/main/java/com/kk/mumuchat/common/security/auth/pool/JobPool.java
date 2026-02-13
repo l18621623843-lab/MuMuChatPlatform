@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.security.auth.pool;
 /**
  * 定时任务服务 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface JobPool {
 

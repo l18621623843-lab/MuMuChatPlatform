@@ -12,7 +12,7 @@ import com.kk.mumuchat.system.authority.service.ISysModuleService;
 /**
  * 系统服务|权限模块|模块管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysModuleController extends BaseController<SysModuleQuery, SysModuleDto, ISysModuleService> {
 

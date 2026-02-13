@@ -15,7 +15,7 @@ import static com.kk.mumuchat.common.core.constant.basic.TenantConstants.ISOLATE
 /**
  * 租户库源策略
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class DsIsolateExpressionProcessor extends DsProcessor {

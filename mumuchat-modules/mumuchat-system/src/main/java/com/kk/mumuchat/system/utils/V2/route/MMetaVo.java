@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 路由元信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class MMetaVo {

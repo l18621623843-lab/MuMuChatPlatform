@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.authority.service.ISysClientService;
 /**
  * 系统服务|权限模块|客户端管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysClientController extends BaseController<SysClientQuery, SysClientDto, ISysClientService> {
 

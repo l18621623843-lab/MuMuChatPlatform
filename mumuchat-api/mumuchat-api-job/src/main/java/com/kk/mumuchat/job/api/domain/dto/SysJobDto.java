@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 调度任务 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

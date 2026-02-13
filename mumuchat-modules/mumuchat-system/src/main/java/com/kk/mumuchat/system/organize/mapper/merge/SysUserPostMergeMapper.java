@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.organize.domain.merge.SysUserPostMerge;
 /**
  * 系统服务|组织模块|用户-岗位关联 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysUserPostMergeMapper extends BasicMapper<SysUserPostMerge> {

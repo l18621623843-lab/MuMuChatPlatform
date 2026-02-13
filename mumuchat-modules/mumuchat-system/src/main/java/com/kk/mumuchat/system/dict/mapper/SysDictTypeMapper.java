@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.dict.domain.query.SysDictTypeQuery;
 /**
  * 系统服务|字典模块|字典类型管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysDictTypeMapper extends BaseMapper<SysDictTypeQuery, SysDictTypeDto, SysDictTypePo> {

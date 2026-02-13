@@ -27,7 +27,7 @@ import java.util.Optional;
 /**
  * 抽象quartz调用
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public abstract class AbstractQuartzJob implements Job {

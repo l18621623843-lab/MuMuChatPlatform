@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.model.DataScope;
 /**
  * 管理端 - 权限获取工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SecurityUserUtils extends SecurityUtils {
 

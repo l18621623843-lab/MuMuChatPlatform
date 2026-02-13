@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
 /**
  * 服务调用验证处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Aspect

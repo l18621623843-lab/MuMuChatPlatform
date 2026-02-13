@@ -12,7 +12,7 @@ import java.io.Serial;
 /**
  * 业务异常
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @NoArgsConstructor

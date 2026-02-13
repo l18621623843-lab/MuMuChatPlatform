@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 租户控制过滤注解
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

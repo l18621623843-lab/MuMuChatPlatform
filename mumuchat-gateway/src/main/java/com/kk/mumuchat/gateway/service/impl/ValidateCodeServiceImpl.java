@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 验证码实现处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class ValidateCodeServiceImpl implements ValidateCodeService {

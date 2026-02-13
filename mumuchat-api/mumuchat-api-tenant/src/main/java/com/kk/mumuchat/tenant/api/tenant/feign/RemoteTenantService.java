@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 租户服务 | 租户模块 | 租户服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteTenantService", path = "/inner/tenant", value = "${xueyi.remote.service.tenant}", fallbackFactory = RemoteTenantFallbackFactory.class)
 public interface RemoteTenantService extends RemoteCacheService {

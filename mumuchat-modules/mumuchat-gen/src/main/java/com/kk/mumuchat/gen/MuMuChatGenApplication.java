@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 代码生成
  *
- * @author xueyi
+ * @author mumuchat
  */
 @EnableCustomConfig
 @EnableCustomSwagger

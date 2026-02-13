@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|字典模块|字典类型 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysDictTypeConverter extends BaseConverter<SysDictTypeQuery, SysDictTypeDto, SysDictTypePo> {

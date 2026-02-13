@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 业务管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface IGenTableService extends IBaseService<GenTableQuery, GenTableDto> {
 

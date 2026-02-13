@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * MP配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AutoConfiguration(before = MybatisPlusAutoConfiguration.class)
 public class XueYiMyBatisPlusConfig {

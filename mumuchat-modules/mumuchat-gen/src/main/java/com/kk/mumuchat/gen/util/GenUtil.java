@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 代码生成器 工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class GenUtil {
 

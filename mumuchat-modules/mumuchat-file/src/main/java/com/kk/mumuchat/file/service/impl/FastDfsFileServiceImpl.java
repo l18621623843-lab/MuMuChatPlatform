@@ -19,7 +19,7 @@ import java.io.InputStream;
 /**
  * FastDFS 文件存储
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class FastDfsFileServiceImpl implements IFileService {

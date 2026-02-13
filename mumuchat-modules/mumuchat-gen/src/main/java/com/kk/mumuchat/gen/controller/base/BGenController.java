@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * 代码生成管理 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BGenController extends BaseController<GenTableQuery, GenTableDto, IGenTableService> {
 

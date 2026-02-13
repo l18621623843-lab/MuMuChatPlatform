@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.security.auth.pool.tenant.TeTenantPool;
 /**
  * 租户服务 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface TenantPool extends TeTenantPool, TeSourcePool {
 }

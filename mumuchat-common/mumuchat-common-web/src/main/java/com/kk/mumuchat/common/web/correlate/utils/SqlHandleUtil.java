@@ -13,7 +13,7 @@ import com.kk.mumuchat.common.web.correlate.domain.SqlField;
 /**
  * SQL操作工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public final class SqlHandleUtil {
 

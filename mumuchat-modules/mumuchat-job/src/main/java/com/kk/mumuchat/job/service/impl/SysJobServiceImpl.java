@@ -33,7 +33,7 @@ import java.util.Objects;
 /**
  * 调度任务管理 服务层实现
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysJobServiceImpl extends BaseServiceImpl<SysJobQuery, SysJobDto, SysJobCorrelate, ISysJobManager> implements ISysJobService {

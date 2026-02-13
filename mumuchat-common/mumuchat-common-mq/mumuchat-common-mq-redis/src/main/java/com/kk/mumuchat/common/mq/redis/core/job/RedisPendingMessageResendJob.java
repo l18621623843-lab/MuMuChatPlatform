@@ -23,7 +23,7 @@ import java.util.Objects;
 /**
  * 这个任务用于处理，crash 之后的消费者未消费完的消息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @AllArgsConstructor

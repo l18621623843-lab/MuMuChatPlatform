@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.core.web.model.BaseLoginUser;
 /**
  * 日志记录 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ILoginLogService {
 

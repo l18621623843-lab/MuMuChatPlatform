@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.authority.domain.query.SysAuthGroupQuery;
 /**
  * 系统服务|权限模块|企业权限组管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Master
 public interface SysAuthGroupMapper extends BaseMapper<SysAuthGroupQuery, SysAuthGroupDto, SysAuthGroupPo> {

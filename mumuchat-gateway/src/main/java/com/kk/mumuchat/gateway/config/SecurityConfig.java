@@ -15,7 +15,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 /**
  * 安全认证配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 @EnableWebFluxSecurity

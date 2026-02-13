@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 业务字段 关联映射
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

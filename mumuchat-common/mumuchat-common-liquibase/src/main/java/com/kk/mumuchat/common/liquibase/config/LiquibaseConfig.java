@@ -18,7 +18,7 @@ import java.sql.SQLException;
 /**
  * Liquibase配置类，使用Nacos中的数据库配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @EnableConfigurationProperties(LiquibaseProperties.class)

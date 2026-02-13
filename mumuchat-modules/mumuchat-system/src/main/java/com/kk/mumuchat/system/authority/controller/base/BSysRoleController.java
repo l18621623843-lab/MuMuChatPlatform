@@ -10,7 +10,7 @@ import com.kk.mumuchat.system.authority.service.ISysRoleService;
 /**
  * 系统服务|权限模块|角色管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysRoleController extends BaseController<SysRoleQuery, SysRoleDto, ISysRoleService> {
 

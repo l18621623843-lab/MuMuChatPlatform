@@ -8,7 +8,7 @@ import java.nio.charset.Charset;
 /**
  * Http客户端工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class HttpResponse extends cn.hutool.http.HttpResponse {
 

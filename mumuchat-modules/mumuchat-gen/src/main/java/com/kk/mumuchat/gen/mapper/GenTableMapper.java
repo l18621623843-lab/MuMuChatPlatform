@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 业务管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface GenTableMapper extends BaseMapper<GenTableQuery, GenTableDto, GenTablePo> {
 

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 业务 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

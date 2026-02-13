@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @param <Q> Query
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 public interface IBaseService<Q extends BaseEntity, D extends BaseEntity> {
 

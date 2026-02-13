@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 获取body请求数据（解决流不能重复读取问题）
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class CacheRequestFilter extends AbstractGatewayFilterFactory<CacheRequestFilter.Config> {

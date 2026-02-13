@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|组织模块|企业管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysEnterpriseManagerImpl extends BaseManagerImpl<SysEnterpriseQuery, SysEnterpriseDto, SysEnterprisePo, SysEnterpriseMapper, SysEnterpriseConverter> implements ISysEnterpriseManager {

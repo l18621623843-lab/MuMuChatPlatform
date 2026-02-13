@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 /**
  * 统一认证登录 - 授权码模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 public final class FormIdentityLoginConfigurer extends AbstractHttpConfigurer<FormIdentityLoginConfigurer, HttpSecurity> {
 

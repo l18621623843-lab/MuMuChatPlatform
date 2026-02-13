@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.security.auth.pool.system;
 /**
  * 系统服务 | 权限模块 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface SysAuthorityPool {
 

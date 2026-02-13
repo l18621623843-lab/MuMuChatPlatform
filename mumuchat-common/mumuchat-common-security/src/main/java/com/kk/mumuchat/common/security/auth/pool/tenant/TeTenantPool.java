@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.security.auth.pool.tenant;
 /**
  * 租户服务 | 租户模块 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface TeTenantPool {
 

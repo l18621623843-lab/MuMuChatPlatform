@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * MQTT接受服务的客户端 | 默认
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

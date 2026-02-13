@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /**
  * 黑名单过滤器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUrlFilter.Config> {

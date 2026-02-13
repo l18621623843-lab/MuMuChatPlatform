@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 /**
  * 自定义验证转换器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public abstract class AuthenticationBaseConverter<T extends AuthenticationBaseToken> implements AuthenticationConverter {
 

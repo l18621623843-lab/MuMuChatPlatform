@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * sql 通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SqlConstants {
 

@@ -10,7 +10,7 @@ import lombok.Data;
 /**
  * 用户注册对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class RegisterBody {

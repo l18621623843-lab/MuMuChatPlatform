@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 数据权限 基础数据对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class DataScope implements Serializable {

@@ -10,7 +10,7 @@ import java.io.Serial;
 /**
  * 系统服务|素材模块|文件 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

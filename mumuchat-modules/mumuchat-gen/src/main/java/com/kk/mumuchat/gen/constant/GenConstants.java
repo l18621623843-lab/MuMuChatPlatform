@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 代码生成通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class GenConstants {
 

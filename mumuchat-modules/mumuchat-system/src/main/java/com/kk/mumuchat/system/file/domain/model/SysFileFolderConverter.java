@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 系统服务|素材模块|文件分类 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysFileFolderConverter extends TreeConverter<SysFileFolderQuery, SysFileFolderDto, SysFileFolderPo> {

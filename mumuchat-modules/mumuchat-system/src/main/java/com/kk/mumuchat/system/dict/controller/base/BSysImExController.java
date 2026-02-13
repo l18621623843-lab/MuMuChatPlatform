@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.dict.service.ISysImExService;
 /**
  * 导入导出配置管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysImExController extends BaseController<SysImExQuery, SysImExDto, ISysImExService> {
 

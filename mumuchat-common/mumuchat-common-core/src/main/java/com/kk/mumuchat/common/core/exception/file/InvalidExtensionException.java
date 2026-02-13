@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * 文件上传 误异常类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class InvalidExtensionException extends FileUploadException {
     @Serial

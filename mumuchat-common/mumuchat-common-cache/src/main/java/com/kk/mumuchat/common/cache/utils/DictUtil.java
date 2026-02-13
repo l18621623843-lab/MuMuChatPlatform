@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * 字典缓存管理工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class DictUtil {
 

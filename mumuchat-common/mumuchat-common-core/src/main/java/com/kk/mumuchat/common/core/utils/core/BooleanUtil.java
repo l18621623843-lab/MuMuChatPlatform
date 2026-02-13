@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.utils.core;
 /**
  * Boolean类型工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BooleanUtil extends cn.hutool.core.util.BooleanUtil {
 

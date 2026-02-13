@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.mq.redis.core.message.AbstractRedisMessage;
 /**
  * Redis Channel Message 抽象类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public abstract class AbstractRedisChannelMessage extends AbstractRedisMessage {
 

@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  mysql:
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    image: mumuchat-mysql:8.0
+    container_name: mumuchat-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=mumuchat-config
+    volumes:
+      - D:/docker/mysql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    networks:
+      - mumuchat-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p123456"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  nacos:
+    # ✅ 使用与SQL文件匹配的版本 v2.5.3（SQL中包含config_info_gray表，为2.5.0+版本）
+    image: nacos/nacos-server:v2.5.2
+    container_name: mumuchat-nacos
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    environment:
+      # 单机模式
+      - MODE=standalone
+      # 数据库配置
+      - SPRING_DATASOURCE_PLATFORM=mysql
+      - MYSQL_SERVICE_HOST=mysql
+      - MYSQL_SERVICE_PORT=3306
+      - MYSQL_SERVICE_DB_NAME=mumuchat-config
+      - MYSQL_SERVICE_USER=root
+      - MYSQL_SERVICE_PASSWORD=123456
+      - MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      # JVM参数
+      - JVM_XMS=512m
+      - JVM_XMX=1024m
+      - JVM_XMN=256m
+      # 时区
+      - TZ=Asia/Shanghai
+      # 认证配置（重要！）
+      - NACOS_AUTH_ENABLE=true
+      - NACOS_AUTH_TOKEN=U2VjcmV0S2V5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMXFjdGM2NjA4
+      - NACOS_AUTH_IDENTITY_KEY=U2VjcmV0S2V5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMXFjdGM2NjA4
+      - NACOS_AUTH_IDENTITY_VALUE=U2VjcmV0S2V5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMXFjdGM2NjA4
+    volumes:
+      # 持久化数据
+      - D:/docker/nacos/logs:/home/nacos/logs
+      - D:/docker/nacos/data:/home/nacos/data
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - mumuchat-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8848/nacos/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+networks:
+  mumuchat-network:
+    driver: bridge

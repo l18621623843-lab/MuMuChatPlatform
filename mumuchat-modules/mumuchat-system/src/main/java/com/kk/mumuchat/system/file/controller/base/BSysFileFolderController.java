@@ -8,7 +8,7 @@ import com.kk.mumuchat.system.file.service.ISysFileFolderService;
 /**
  * 系统服务|素材模块|文件分类管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysFileFolderController extends TreeController<SysFileFolderQuery, SysFileFolderDto, ISysFileFolderService> {
 

@@ -11,7 +11,7 @@ import java.io.Serial;
 /**
  * 租户服务 | 租户模块 | 租户 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

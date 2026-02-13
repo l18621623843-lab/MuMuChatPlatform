@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 系统服务|组织模块|用户管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysUserController extends BaseController<SysUserQuery, SysUserDto, ISysUserService> {
 

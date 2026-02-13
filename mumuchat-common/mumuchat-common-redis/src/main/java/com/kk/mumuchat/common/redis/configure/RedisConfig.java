@@ -31,7 +31,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * redis配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @AutoConfiguration

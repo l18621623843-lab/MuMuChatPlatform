@@ -38,7 +38,7 @@ import static com.kk.mumuchat.common.core.constant.basic.SecurityConstants.ROLE_
 /**
  * 登录管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysLoginServiceImpl implements ISysLoginService {

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 系统服务|组织模块|组织 合成通用结构对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @NoArgsConstructor

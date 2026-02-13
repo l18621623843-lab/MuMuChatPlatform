@@ -14,7 +14,7 @@ import java.io.Serial;
  * Tree 租户基类
  *
  * @param <D> Dto
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 业务操作类型
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

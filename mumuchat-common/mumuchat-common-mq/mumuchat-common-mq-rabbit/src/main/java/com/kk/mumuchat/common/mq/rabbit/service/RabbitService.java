@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * RabbitMQ消息 工具类
  *
- * @author xueyi
+ * @author mumuchat
  **/
 public interface RabbitService {
 

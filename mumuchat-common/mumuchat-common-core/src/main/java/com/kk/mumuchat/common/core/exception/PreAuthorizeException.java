@@ -7,7 +7,7 @@ import java.io.Serial;
 /**
  * 权限异常
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class PreAuthorizeException extends RuntimeException {

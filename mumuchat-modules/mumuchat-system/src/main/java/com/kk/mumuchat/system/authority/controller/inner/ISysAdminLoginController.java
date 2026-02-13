@@ -39,7 +39,7 @@ import java.util.stream.Collectors;
 /**
  * 管理端登录|内部调用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @InnerAuth
 @RestController

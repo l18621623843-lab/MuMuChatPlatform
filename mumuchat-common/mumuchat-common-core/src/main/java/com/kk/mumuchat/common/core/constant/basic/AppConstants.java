@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 应用通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AppConstants {
 

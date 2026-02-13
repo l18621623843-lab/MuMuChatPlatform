@@ -14,7 +14,7 @@ import static com.kk.mumuchat.common.core.constant.basic.SecurityConstants.PERMI
 /**
  * 权限验证实现类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AuthService {
 

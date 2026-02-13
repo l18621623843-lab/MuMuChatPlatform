@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 数据源管理配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

@@ -45,7 +45,7 @@ import java.util.stream.Collectors;
 /**
  * 系统服务|字典模块|字典类型管理 业务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysDictTypeServiceImpl extends BaseServiceImpl<SysDictTypeQuery, SysDictTypeDto, SysDictTypeCorrelate, ISysDictTypeManager> implements ISysDictTypeService {

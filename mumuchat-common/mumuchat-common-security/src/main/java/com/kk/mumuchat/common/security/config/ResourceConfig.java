@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.server.resource.introspection.OpaqueT
 /**
  * 资源服务配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @RequiredArgsConstructor
 @EnableConfigurationProperties(PermitAllUrlProperties.class)

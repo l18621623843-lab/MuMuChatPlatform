@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * 企业缓存管理工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EnterpriseUtil {
 

@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.utils.measure;
 /**
  * 距离测算工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class CalculationUtil {
 

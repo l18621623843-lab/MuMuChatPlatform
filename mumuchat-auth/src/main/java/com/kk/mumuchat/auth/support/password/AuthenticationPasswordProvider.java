@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.server.authorization.token.OAuth2Toke
 /**
  * 自定义授权处理器 | 密码模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public class AuthenticationPasswordProvider extends AuthenticationBaseProvider<AuthenticationPasswordToken> {

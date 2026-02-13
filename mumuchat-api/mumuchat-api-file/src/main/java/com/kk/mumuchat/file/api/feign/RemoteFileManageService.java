@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 文件管理服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteFileManageService", path = "/inner/file", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteFileManageFallbackFactory.class)
 public interface RemoteFileManageService {

@@ -14,7 +14,7 @@ import static com.kk.mumuchat.common.core.constant.basic.EntityConstants.REMARK;
 /**
  * 系统服务|素材模块|文件分类 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * 动态SQL控制对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public final class SqlField implements Serializable {

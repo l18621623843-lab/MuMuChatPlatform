@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 /**
  * 直接关联映射对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @SuppressWarnings({"rawtypes"})
@@ -153,7 +153,7 @@ public final class Direct<D extends BaseEntity, S extends BaseEntity> extends Ba
     /**
      * 数据复制关联对象
      *
-     * @author xueyi
+     * @author mumuchat
      */
     @Data
     @AllArgsConstructor
@@ -170,7 +170,7 @@ public final class Direct<D extends BaseEntity, S extends BaseEntity> extends Ba
     /**
      * 关联映射执行对象
      *
-     * @author xueyi
+     * @author mumuchat
      */
     @Data
     @EqualsAndHashCode(callSuper = true)
@@ -188,7 +188,7 @@ public final class Direct<D extends BaseEntity, S extends BaseEntity> extends Ba
         /**
          * 数据复制对象
          *
-         * @author xueyi
+         * @author mumuchat
          */
         @Data
         public static class CopyField implements Serializable {

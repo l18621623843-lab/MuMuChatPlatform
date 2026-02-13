@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 计数缓存管理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface INumStorageService {
 

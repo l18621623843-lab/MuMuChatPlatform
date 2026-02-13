@@ -11,7 +11,7 @@ import com.kk.mumuchat.system.notice.service.ISysNoticeService;
 /**
  * 系统服务|消息模块|通知公告管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysNoticeController extends BaseController<SysNoticeQuery, SysNoticeDto, ISysNoticeService> {
 

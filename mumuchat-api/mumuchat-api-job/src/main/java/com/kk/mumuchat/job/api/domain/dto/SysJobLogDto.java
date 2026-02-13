@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 /**
  * 调度日志 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

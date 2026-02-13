@@ -8,7 +8,7 @@ import com.kk.mumuchat.tenant.api.source.domain.query.TeStrategyQuery;
 /**
  * 租户服务 | 策略模块 | 源策略管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ITeStrategyManager extends IBaseManager<TeStrategyQuery, TeStrategyDto> {
 

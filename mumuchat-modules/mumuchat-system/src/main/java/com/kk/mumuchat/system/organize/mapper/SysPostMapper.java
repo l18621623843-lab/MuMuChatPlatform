@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.organize.domain.query.SysPostQuery;
 /**
  * 系统服务|组织模块|岗位管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysPostMapper extends BaseMapper<SysPostQuery, SysPostDto, SysPostPo> {

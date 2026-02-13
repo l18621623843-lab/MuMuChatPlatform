@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 路由元信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

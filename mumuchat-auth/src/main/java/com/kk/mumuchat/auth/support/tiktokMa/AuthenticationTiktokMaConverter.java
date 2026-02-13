@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 自定义验证转换器 | 微信小程序模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AuthenticationTiktokMaConverter extends AuthenticationBaseConverter<AuthenticationTiktokMaToken> {
 

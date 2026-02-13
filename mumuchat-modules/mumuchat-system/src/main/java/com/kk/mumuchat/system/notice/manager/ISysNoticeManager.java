@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.notice.domain.query.SysNoticeQuery;
 /**
  * 系统服务|消息模块|通知公告管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysNoticeManager extends IBaseManager<SysNoticeQuery, SysNoticeDto> {
 }

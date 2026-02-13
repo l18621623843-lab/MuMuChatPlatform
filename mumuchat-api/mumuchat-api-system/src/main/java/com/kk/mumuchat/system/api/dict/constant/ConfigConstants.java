@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 /**
  * 字典配置通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class ConfigConstants {
 

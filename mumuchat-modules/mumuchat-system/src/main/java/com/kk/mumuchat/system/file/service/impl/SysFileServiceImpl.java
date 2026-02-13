@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|素材模块|文件管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysFileServiceImpl extends BaseServiceImpl<SysFileQuery, SysFileDto, SysFileCorrelate, ISysFileManager> implements ISysFileService {

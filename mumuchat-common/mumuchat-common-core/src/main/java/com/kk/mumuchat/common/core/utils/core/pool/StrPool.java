@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.utils.core.pool;
 /**
  * 常用字符串常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface StrPool {
 

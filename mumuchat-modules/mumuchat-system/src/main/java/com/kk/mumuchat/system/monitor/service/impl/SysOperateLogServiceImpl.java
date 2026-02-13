@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|监控模块|操作日志管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysOperateLogServiceImpl extends BaseServiceImpl<SysOperateLogQuery, SysOperateLogDto, SysOperateLogCorrelate, ISysOperateLogManager> implements ISysOperateLogService {

@@ -17,7 +17,7 @@ import static com.kk.mumuchat.common.web.correlate.contant.CorrelateConstants.Su
 /**
  * 调度任务 关联映射
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

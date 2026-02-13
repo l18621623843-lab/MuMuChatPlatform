@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.security.auth.pool;
 /**
  * 代码生成服务 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface GenPool {
 

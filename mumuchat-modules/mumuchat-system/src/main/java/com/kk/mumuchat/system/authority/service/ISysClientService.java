@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.authority.domain.query.SysClientQuery;
 /**
  * 系统服务|权限模块|客户端管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysClientService extends IBaseService<SysClientQuery, SysClientDto> {
 

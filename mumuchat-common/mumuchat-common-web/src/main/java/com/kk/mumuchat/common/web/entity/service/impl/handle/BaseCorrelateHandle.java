@@ -20,7 +20,7 @@ import java.util.Map;
  *
  * @param <D> Dto
  * @param <C> Correlate
- * @author xueyi
+ * @author mumuchat
  */
 public abstract class BaseCorrelateHandle<D extends BaseEntity, C extends Enum<? extends Enum<?>> & CorrelateService> {
 

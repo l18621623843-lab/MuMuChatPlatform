@@ -7,7 +7,7 @@ import java.io.Serial;
 /**
  * 文件信息异常类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class FileException extends BaseException {
     @Serial

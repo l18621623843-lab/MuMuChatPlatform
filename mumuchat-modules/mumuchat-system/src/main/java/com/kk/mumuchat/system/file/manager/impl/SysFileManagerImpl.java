@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|素材模块|文件管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysFileManagerImpl extends BaseManagerImpl<SysFileQuery, SysFileDto, SysFilePo, SysFileMapper, SysFileConverter> implements ISysFileManager {

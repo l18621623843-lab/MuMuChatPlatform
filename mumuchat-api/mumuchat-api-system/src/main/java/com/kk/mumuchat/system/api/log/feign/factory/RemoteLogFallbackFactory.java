@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|监控模块|日志服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component

@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * 租户服务 | 租户模块 | 租户管理 | 管理端 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @AdminAuth
 @RestController

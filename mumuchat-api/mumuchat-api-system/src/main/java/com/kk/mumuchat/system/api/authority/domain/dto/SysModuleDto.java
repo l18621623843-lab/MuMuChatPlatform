@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 系统服务|权限模块|模块 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

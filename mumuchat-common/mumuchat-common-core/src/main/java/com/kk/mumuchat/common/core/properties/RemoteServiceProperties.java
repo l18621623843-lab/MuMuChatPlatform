@@ -12,7 +12,7 @@ import java.util.List;
  * 用于定义和管理各个微服务模块的服务ID名称
  * 支持通过配置文件进行自定义配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

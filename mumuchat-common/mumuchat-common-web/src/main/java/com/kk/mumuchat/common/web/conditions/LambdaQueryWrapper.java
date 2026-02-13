@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * MyBatis Plus QueryWrapper 拓展类
  *
- * @author xueyi
+ * @author mumuchat
  */
 @NoArgsConstructor
 public class LambdaQueryWrapper<T> extends com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper<T> {

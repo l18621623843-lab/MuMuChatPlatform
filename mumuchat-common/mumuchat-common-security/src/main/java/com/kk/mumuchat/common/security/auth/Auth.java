@@ -8,7 +8,7 @@ import com.kk.mumuchat.common.security.auth.pool.TenantPool;
 /**
  * 权限标识常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class Auth implements SystemPool, JobPool, GenPool, TenantPool {
 }

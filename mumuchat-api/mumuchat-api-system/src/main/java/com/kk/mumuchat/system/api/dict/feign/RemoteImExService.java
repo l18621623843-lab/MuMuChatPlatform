@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * 系统服务|字典模块|导入导出配置服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteImExService", path = "/inner/imExConfig", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteImExFallbackFactory.class)
 public interface RemoteImExService extends RemoteCacheService {

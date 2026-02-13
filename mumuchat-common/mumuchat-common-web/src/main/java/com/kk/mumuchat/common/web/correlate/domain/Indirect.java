@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 间接关联映射对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @SuppressWarnings({"rawtypes"})
@@ -181,7 +181,7 @@ public final class Indirect<D extends BaseEntity, M extends BasisEntity, S exten
     /**
      * 关联映射执行对象
      *
-     * @author xueyi
+     * @author mumuchat
      */
     @Data
     @EqualsAndHashCode(callSuper = true)

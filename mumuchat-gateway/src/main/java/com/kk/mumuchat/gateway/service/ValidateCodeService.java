@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * 验证码处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ValidateCodeService {
 

@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 模块路由映射信息 数据输出对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class ModuleRouteURLVo {

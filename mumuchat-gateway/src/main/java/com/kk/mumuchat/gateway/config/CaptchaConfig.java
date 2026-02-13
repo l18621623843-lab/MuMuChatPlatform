@@ -25,7 +25,7 @@ import static com.google.code.kaptcha.Constants.KAPTCHA_TEXTPRODUCER_IMPL;
 /**
  * 验证码配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 public class CaptchaConfig {

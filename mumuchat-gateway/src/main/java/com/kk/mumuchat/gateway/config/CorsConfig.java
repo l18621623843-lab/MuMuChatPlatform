@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 /**
  * 跨域配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Configuration
 public class CorsConfig {

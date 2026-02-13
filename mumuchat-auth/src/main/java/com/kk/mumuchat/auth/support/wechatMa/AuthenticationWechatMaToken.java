@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 自定义授权模式 | 微信小程序模式
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class AuthenticationWechatMaToken extends AuthenticationBaseToken {
 

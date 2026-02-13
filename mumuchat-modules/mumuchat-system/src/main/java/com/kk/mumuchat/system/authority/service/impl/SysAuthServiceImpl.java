@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 /**
  * 权限管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysAuthServiceImpl implements ISysAuthService {

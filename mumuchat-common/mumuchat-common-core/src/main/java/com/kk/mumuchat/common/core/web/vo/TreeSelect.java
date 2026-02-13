@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * TreeSelect树结构实体类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class TreeSelect<T extends TreeEntity<T>> implements Serializable {
 

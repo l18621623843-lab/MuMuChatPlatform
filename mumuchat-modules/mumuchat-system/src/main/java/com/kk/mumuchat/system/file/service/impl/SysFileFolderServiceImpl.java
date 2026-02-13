@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 系统服务|素材模块|文件分类管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysFileFolderServiceImpl extends TreeServiceImpl<SysFileFolderQuery, SysFileFolderDto, SysFileFolderCorrelate, ISysFileFolderManager> implements ISysFileFolderService {

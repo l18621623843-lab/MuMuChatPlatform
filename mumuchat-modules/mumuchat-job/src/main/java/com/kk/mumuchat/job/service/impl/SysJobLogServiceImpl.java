@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  * 调度日志管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysJobLogServiceImpl extends BaseServiceImpl<SysJobLogQuery, SysJobLogDto, SysJobLogCorrelate, ISysJobLogManager> implements ISysJobLogService {

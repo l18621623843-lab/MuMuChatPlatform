@@ -17,7 +17,7 @@ import static com.baomidou.mybatisplus.annotation.SqlCondition.LIKE_RIGHT;
 /**
  * 租户服务 | 租户模块 | 租户 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @TableName("te_tenant")

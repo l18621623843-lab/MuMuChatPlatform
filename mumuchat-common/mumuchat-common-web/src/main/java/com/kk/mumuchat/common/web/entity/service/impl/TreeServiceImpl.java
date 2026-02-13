@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * @param <D>   Dto
  * @param <C>   Correlate
  * @param <IDG> DtoIManager
- * @author xueyi
+ * @author mumuchat
  */
 public class TreeServiceImpl<Q extends TreeEntity<D>, D extends TreeEntity<D>, C extends Enum<? extends Enum<?>> & CorrelateService, IDG extends ITreeManager<Q, D>> extends TreeServiceHandle<Q, D, C, IDG> implements ITreeService<Q, D> {
 

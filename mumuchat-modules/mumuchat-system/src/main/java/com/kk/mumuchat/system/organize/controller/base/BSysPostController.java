@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * 系统服务|组织模块|岗位管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysPostController extends BaseController<SysPostQuery, SysPostDto, ISysPostService> {
 

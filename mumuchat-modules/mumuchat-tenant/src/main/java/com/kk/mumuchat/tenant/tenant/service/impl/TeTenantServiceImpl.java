@@ -49,7 +49,7 @@ import static com.kk.mumuchat.common.core.constant.basic.BaseConstants.TOP_ID;
 /**
  * 租户服务 | 租户模块 | 租户管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class TeTenantServiceImpl extends BaseServiceImpl<TeTenantQuery, TeTenantDto, TeTenantCorrelate, ITeTenantManager> implements ITeTenantService {

@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
 /**
  * 系统服务|权限模块|菜单管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysMenuServiceImpl extends TreeServiceImpl<SysMenuQuery, SysMenuDto, SysMenuCorrelate, ISysMenuManager> implements ISysMenuService {

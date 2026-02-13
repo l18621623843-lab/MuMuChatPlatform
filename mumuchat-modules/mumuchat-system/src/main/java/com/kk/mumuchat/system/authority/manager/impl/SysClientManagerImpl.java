@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统服务|权限模块|客户端管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysClientManagerImpl extends BaseManagerImpl<SysClientQuery, SysClientDto, SysClientPo, SysClientMapper, SysClientConverter> implements ISysClientManager {

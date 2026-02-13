@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 系统服务|权限模块|客户端管理|内部调用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @InnerAuth
 @RestController

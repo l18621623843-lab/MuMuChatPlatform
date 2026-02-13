@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 主数据源配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

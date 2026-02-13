@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.file.domain.query.SysFileQuery;
 /**
  * 系统服务|素材模块|文件管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysFileMapper extends BaseMapper<SysFileQuery, SysFileDto, SysFilePo> {

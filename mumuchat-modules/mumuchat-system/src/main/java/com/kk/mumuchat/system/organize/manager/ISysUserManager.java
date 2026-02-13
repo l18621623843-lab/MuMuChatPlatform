@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * 系统服务|组织模块|用户管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysUserManager extends IBaseManager<SysUserQuery, SysUserDto> {
 

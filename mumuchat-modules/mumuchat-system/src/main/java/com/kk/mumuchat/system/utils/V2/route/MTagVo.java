@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 菜单标签配置信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class MTagVo {

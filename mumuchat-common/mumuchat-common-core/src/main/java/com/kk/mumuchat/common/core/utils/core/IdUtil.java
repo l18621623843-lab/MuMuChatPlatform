@@ -6,7 +6,7 @@ import com.kk.mumuchat.common.core.config.ISnowflakeCreator;
 /**
  * 唯一ID工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class IdUtil extends cn.hutool.core.util.IdUtil {
 

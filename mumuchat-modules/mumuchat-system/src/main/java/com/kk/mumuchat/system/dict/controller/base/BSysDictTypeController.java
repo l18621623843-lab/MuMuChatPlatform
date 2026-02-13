@@ -17,7 +17,7 @@ import java.util.Objects;
 /**
  * 系统服务|字典模块|字典类型管理|通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysDictTypeController extends BaseController<SysDictTypeQuery, SysDictTypeDto, ISysDictTypeService> {
 

@@ -24,7 +24,7 @@ import java.util.function.Function;
 /**
  * 租户服务 | 策略模块 | 数据源管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class TeSourceServiceImpl extends BaseServiceImpl<TeSourceQuery, TeSourceDto, TeSourceCorrelate, ITeSourceManager> implements ITeSourceService {

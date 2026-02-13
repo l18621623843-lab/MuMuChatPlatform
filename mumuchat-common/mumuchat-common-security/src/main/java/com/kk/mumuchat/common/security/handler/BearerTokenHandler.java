@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 /**
  * Token解析器
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BearerTokenHandler implements BearerTokenResolver {
 

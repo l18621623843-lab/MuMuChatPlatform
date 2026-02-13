@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 字典通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class DictConstants {
 

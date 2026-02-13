@@ -7,7 +7,7 @@ import com.kk.mumuchat.system.api.authority.domain.query.SysRoleQuery;
 /**
  * 系统服务|权限模块|角色管理 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysRoleService extends IBaseService<SysRoleQuery, SysRoleDto> {
 

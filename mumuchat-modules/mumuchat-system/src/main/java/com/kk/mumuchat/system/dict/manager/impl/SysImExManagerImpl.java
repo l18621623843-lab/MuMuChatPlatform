@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * 导入导出配置管理 数据封装层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class SysImExManagerImpl extends BaseManagerImpl<SysImExQuery, SysImExDto, SysImExPo, SysImExMapper, SysImExConverter> implements ISysImExManager {

@@ -6,7 +6,7 @@ import org.springframework.core.Ordered;
 /**
  * MQTT发送客户端消息处理 | 基类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface MqttBaseSendHandle extends Ordered {
 

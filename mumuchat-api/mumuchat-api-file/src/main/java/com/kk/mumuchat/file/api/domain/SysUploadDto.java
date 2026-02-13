@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 文件上传 数据传输对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class SysUploadDto implements Serializable {

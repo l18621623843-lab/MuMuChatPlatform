@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.utils.core;
 /**
  * 加密算法工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class SecureUtil extends cn.hutool.crypto.SecureUtil {
 

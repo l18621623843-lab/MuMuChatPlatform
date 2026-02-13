@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * credential 支持客户端模式的用户存储
  *
- * @author xueyi
+ * @author mumuchat
  */
 @RequiredArgsConstructor
 public class ClientAuthenticatedPrincipal implements OAuth2AuthenticatedPrincipal {

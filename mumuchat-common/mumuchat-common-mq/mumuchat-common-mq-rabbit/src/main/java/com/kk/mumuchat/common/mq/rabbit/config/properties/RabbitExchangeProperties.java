@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 安全配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

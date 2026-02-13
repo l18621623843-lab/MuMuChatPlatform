@@ -3,7 +3,7 @@ package com.kk.mumuchat.common.core.utils.file;
 /**
  * 媒体类型工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class MimeTypeUtil {
 

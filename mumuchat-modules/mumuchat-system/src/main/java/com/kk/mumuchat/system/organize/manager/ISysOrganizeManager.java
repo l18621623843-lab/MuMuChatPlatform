@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * 系统服务|组织模块|组织管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysOrganizeManager {
 

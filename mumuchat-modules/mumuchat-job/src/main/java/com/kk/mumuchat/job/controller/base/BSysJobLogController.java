@@ -8,7 +8,7 @@ import com.kk.mumuchat.job.service.ISysJobLogService;
 /**
  * 定时任务|调度日志管理 | 通用 业务处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class BSysJobLogController extends BaseController<SysJobLogQuery, SysJobLogDto, ISysJobLogService> {
 

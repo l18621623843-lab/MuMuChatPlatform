@@ -7,7 +7,7 @@ import com.kk.mumuchat.common.mq.redis.core.message.AbstractRedisMessage;
  * 通过拦截器，作为插件机制，实现拓展。
  * 例如说，多租户场景下的 MQ 消息处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface RedisMessageInterceptor {
 

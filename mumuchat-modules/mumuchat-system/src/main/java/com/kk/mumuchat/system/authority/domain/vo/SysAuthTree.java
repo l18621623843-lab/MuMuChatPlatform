@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * 权限对象 通用结构
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @NoArgsConstructor

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 系统服务|字典模块|参数服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteConfigService", path = "/inner/config", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteConfigFallbackFactory.class)
 public interface RemoteConfigService extends RemoteCacheService {

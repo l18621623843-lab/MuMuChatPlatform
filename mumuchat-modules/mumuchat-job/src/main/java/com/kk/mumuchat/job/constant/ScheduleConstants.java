@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 任务调度通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class ScheduleConstants {
 

@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 文件信息
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 public class SysFile implements Serializable {

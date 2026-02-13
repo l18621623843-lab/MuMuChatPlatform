@@ -40,7 +40,7 @@ import static com.kk.mumuchat.common.cache.constant.CacheConstants.REFRESH_TIME;
 /**
  * token控制器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @SuppressWarnings(value = {"unchecked"})
 public interface ITokenService<User, LoginUser extends BaseLoginUser<User>> extends Ordered {

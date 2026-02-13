@@ -16,7 +16,7 @@ import static com.kk.mumuchat.common.core.constant.basic.SecurityConstants.CREAT
 /**
  * 系统服务|消息模块|通知公告管理 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Service
 public class SysNoticeServiceImpl extends BaseServiceImpl<SysNoticeQuery, SysNoticeDto, SysNoticeCorrelate, ISysNoticeManager> implements ISysNoticeService {

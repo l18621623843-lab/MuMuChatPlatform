@@ -10,7 +10,7 @@ import org.mapstruct.MappingConstants;
 /**
  * 导入导出配置 对象映射器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface SysImExConverter extends BaseConverter<SysImExQuery, SysImExDto, SysImExPo> {

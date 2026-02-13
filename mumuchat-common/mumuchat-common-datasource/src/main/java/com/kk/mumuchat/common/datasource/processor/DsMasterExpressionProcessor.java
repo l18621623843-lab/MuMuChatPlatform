@@ -10,7 +10,7 @@ import static com.kk.mumuchat.common.core.constant.basic.TenantConstants.MASTER;
 /**
  * 主库源策略
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class DsMasterExpressionProcessor extends DsProcessor {

@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 环境通用常量
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class EvnConstants {
 

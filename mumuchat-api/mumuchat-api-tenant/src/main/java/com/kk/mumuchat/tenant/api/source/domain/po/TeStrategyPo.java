@@ -14,7 +14,7 @@ import java.io.Serial;
 /**
  * 租户服务 | 策略模块 | 源策略 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

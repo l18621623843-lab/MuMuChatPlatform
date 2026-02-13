@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统服务|监控模块|操作日志 关联映射
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Getter
 @AllArgsConstructor

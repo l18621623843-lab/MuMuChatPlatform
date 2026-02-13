@@ -16,7 +16,7 @@ import java.util.Optional;
 /**
  * feign 请求拦截器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Component
 public class FeignRequestInterceptor implements RequestInterceptor {

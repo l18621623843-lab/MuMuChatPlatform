@@ -15,7 +15,7 @@ import static com.kk.mumuchat.common.core.constant.basic.EntityConstants.STATUS;
 /**
  * 导入导出配置 持久化对象
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

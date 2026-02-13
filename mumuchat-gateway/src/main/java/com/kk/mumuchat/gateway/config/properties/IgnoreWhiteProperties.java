@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 放行白名单配置
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @Configuration

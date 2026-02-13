@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统服务|字典模块|字典数据管理 数据封装层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysDictDataManager extends IBaseManager<SysDictDataQuery, SysDictDataDto> {
 

@@ -10,7 +10,7 @@ import org.apache.ibatis.mapping.SqlSource;
  * 批量更新 方法体
  * 条件为主键，选择性更新
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class UpdateBatchMethod extends AbstractMethod {
 

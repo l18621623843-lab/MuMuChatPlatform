@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
  * 类工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class ClassUtil extends cn.hutool.core.util.ClassUtil {
 

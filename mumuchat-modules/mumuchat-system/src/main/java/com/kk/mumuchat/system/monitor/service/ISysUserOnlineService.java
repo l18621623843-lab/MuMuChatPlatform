@@ -6,7 +6,7 @@ import com.kk.mumuchat.system.monitor.domain.dto.SysUserOnline;
 /**
  * 系统服务|监控模块|在线用户监控 服务层
  *
- * @author xueyi
+ * @author mumuchat
  */
 public interface ISysUserOnlineService {
 

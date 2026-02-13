@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 租户服务 | 策略模块 | 数据源服务
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteSourceService", path = "/inner/source", value = "${xueyi.remote.service.tenant}", fallbackFactory = RemoteSourceFallbackFactory.class)
 public interface RemoteSourceService extends RemoteCacheService {

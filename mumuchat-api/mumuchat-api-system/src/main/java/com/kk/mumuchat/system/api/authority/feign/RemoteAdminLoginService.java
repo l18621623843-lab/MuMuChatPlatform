@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 登录服务|管理端
  *
- * @author xueyi
+ * @author mumuchat
  */
 @FeignClient(contextId = "remoteLoginService", path = "/inner/login/admin", value = "${xueyi.remote.service.system}", fallbackFactory = RemoteAdminLoginFallbackFactory.class)
 public interface RemoteAdminLoginService {

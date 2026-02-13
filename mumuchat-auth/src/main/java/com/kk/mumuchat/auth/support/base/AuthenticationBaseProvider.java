@@ -57,7 +57,7 @@ import java.util.function.Supplier;
 /**
  * 自定义授权处理器
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 public abstract class AuthenticationBaseProvider<T extends AuthenticationBaseToken> implements AuthenticationProvider {

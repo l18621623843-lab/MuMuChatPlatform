@@ -9,7 +9,7 @@ import com.kk.mumuchat.common.core.web.page.TableSupport;
 /**
  * 分页工具类
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class PageUtil extends PageHelper {
 

@@ -13,7 +13,7 @@ import static com.kk.mumuchat.common.core.constant.basic.TenantConstants.MASTER;
 /**
  * 主数据源
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

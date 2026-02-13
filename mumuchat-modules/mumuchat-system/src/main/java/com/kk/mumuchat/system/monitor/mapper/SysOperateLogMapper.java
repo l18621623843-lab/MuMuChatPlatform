@@ -9,7 +9,7 @@ import com.kk.mumuchat.system.api.log.domain.query.SysOperateLogQuery;
 /**
  * 系统服务|监控模块|操作日志管理 数据层
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Isolate
 public interface SysOperateLogMapper extends BaseMapper<SysOperateLogQuery, SysOperateLogDto, SysOperateLogPo> {

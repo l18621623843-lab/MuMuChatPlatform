@@ -28,7 +28,7 @@ import java.util.Optional;
 /**
  * 客户端认证 服务层处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @RequiredArgsConstructor
 public class ClientRegisteredRepositoryHandler implements RegisteredClientRepository {

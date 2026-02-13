@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * MQ消息信息体
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Data
 @NoArgsConstructor

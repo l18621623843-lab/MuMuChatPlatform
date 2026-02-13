@@ -5,7 +5,7 @@ import com.kk.mumuchat.common.core.utils.servlet.ServletUtil;
 /**
  * 表格数据处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 public class TableSupport {
 

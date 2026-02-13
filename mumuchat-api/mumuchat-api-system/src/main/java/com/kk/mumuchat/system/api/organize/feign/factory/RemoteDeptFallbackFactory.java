@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 系统服务|组织模块|部门服务 降级处理
  *
- * @author xueyi
+ * @author mumuchat
  */
 @Slf4j
 @Component
