@@ -3,7 +3,7 @@ import {GetMenuLM} from '@/model/sys';
 import {ModuleLM} from '@/model/system/authority';
 
 enum Api {
-  GetMenuList = '/system/admin/menu/getRouters/',
+  GetMenuList = '/system/admin/menu/getRouters',
   GetModuleList = '/system/admin/module/getRouters',
 }
 
@@ -13,7 +13,7 @@ enum Api {
 export const getMenuList = (moduleId: string) => {
   return defHttp.get<GetMenuLM>({
     url: Api.GetMenuList,
-    params: moduleId,
+    params: { moduleId },
   });
 };
 

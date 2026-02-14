@@ -13,7 +13,7 @@ nacos:
 # 应用名称配置
 application:
   title: 监控服务
-  name: xueyi-monitor
+  name: mumuchat-monitor
 
 # Spring
 spring:

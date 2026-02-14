@@ -13,7 +13,7 @@ nacos:
 # 应用名称配置
 application:
   title: 融合网关服务
-  name: xueyi-mix-gateway
+  name: mumuchat-mix-gateway
 
 # Spring
 spring:
@@ -52,7 +52,7 @@ spring:
             namespace: ${spring.cloud.nacos.discovery.namespace}
             username: ${spring.cloud.nacos.discovery.username}
             password: ${spring.cloud.nacos.discovery.password}
-            dataId: sentinel-xueyi-gateway
+            dataId: sentinel-mumuchat-gateway
             groupId: DEFAULT_GROUP
             data-type: json
             rule-type: gw-flow
@@ -61,6 +61,6 @@ spring:
       - optional:nacos:application-${spring.profiles.active}.yml?refreshEnabled=true
       - optional:nacos:application-secret-${spring.profiles.active}.yml?refreshEnabled=true
       # 原始网关服务配置
-      - optional:nacos:xueyi-gateway-${spring.profiles.active}.yml?refreshEnabled=true
+      - optional:nacos:mumuchat-gateway-${spring.profiles.active}.yml?refreshEnabled=true
       # 融合覆盖配置
       - optional:nacos:${spring.application.name}-${spring.profiles.active}.yml?refreshEnabled=true

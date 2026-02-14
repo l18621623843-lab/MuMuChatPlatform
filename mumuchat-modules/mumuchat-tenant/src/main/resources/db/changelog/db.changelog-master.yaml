@@ -1,3 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/changelog/dbs/xy-cloud1.sql
